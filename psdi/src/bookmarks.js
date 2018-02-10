@@ -16,22 +16,25 @@ class BookmarkComponent extends React.PureComponent {
       return (
         <div className='modal-window'>
           <div className='interior'>
-            <h3>{feature.properties.title}</h3>
+            <h3>{feature.properties.Title}</h3>
             <div className="bookmarkItem">
               <div>
-                <span className="label">Name:</span> <span className="value">{feature.properties.name}</span>
+                <span className="label">Story:</span> <span className="value">{feature.properties.Story}</span>
               </div>
               <div>
-                <span className="label">Address:</span> <span className="value">{feature.properties.address}</span>
+                <span className="label">Summary:</span> <span className="value">{feature.properties.Summary}</span>
               </div>
               <div>
-                <span className="label">Phone:</span> <span className="value">{feature.properties.telephone}</span>
+                <span className="label">Video:</span> <span className="value"><a href={feature.properties.Link_video}>{feature.properties.Link_video}</a></span>
               </div>
               <div>
-                <span className="label">Web Site:</span> <span className="value"><a href={feature.properties.website}>{feature.properties.website}</a></span>
+                <span className="label">Image:</span> <span className="value"><a href={feature.properties.Link_Image}>{feature.properties.Link_Image}</a></span>
               </div>
               <div>
-                <span className="label">Lat/Long:</span> <span className="value">
+                <span className="label">Date:</span> <span className="value">{feature.properties.Date}</span>
+              </div>
+              <div>
+                <span className="label">Lat/Long: </span> <span className="value">
                   <span className='coords'>{feature.geometry.coordinates[1]}</span>, <span className='coords'>{feature.geometry.coordinates[0]}</span>
                 </span>
               </div>
