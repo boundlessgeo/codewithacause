@@ -6,6 +6,7 @@ import MoveButtonComponent from './moveButton';
 // Custom Bookmark Component
 class BookmarkComponent extends React.PureComponent {
   render() {
+    console.log(this.props.map.sources)
     // Get the feature selected by the count in state
     // Render the modal window using style from app.css
     const count = this.props.bookmark.count;

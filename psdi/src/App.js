@@ -56,7 +56,7 @@ class MarkFeaturesPopup extends SdkPopup {
 
   render() {
     const feature_ids = this.props.features.map(f => f.properties.Title);
-    console.log(this.props.features)
+
     return this.renderPopup((
       <div className="sdk-popup-content">
         <p>
@@ -89,7 +89,7 @@ class App extends Component {
       source: 'osm',
     }));
 
-    store.dispatch(SdkMapActions.addSource('stlouis', {
+    store.dispatch(SdkMapActions.addSource('stories', {
       type: 'geojson',
         data: {
           "type": "FeatureCollection",
@@ -110,9 +110,9 @@ class App extends Component {
         }
     }));
     store.dispatch(SdkMapActions.addLayer({
-      id: 'stlouis',
+      id: 'stories',
       type: 'circle',
-      source: 'stlouis',
+      source: 'stories',
       paint: {
         'circle-radius': 5,
         'circle-color': '#f46b42',
@@ -157,9 +157,8 @@ class App extends Component {
         alert('No features left to delete');
       }
     };
-
     // Init source for the bookmarks
-    //changeSource(SOURCENAMES[0]);
+    changeSource('stories');
   }
 
   render() {
@@ -191,8 +190,7 @@ class App extends Component {
                 });
               }}
             />
-            <div id="bookmark"><BookmarkComponent className='bookmark-item'/></div>
-            <AddBookmarkComponent />
+            <BookmarkComponent className='bookmark-item' store={store}/>
           </div>
         </Provider>
       </div>
