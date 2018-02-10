@@ -7,6 +7,11 @@
 { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.247858964457834, 24.647041610326482 ] } },
 { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.420253914284515, 24.663183693273464 ] } },
 { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.350039191291202, 24.85956606418393 ] } },
+{ "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 90.939401757462207, 24.327018066009312 ] } },
+{ "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.540207679982643, 24.681778761020187 ] } },
+{ "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.247858964457834, 24.647041610326482 ] } },
+{ "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.420253914284515, 24.663183693273464 ] } },
+{ "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.350039191291202, 24.85956606418393 ] } },
 { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 90.939401757462207, 24.327018066009312 ] } }
 ]
 }
