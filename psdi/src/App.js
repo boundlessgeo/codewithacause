@@ -165,10 +165,9 @@ class App extends Component {
     return (
       <div className="App">
         <Provider store={store}>
-          <div className='map-container'>
+          <div className='mapContainer'>
             <SdkMap
               className='map'
-              style={{position: 'relative'}}
               includeFeaturesOnClick
               onClick={(map, xy, featurePromise) => {
                 featurePromise.then((featureGroups) => {
@@ -190,7 +189,7 @@ class App extends Component {
                 });
               }}
             />
-            <BookmarkComponent className='bookmark-item' store={store}/>
+            <BookmarkComponent className='panelContainer' store={store}/>
           </div>
         </Provider>
       </div>

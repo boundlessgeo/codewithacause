@@ -14,8 +14,8 @@ class BookmarkComponent extends React.PureComponent {
       this.props.map.sources[this.props.bookmark.source].data.features) {
       const feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
       return (
-        <div className='modal-window'>
-          <div className='interior'>
+        <div className='panelContainer'>
+          <div className='panel'>
             <h3>{feature.properties.Title}</h3>
             <div className="bookmarkItem">
               <div>
