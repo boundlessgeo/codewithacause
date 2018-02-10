@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@boundlessgeo/sdk": "file:../sdk/dist",
     "node-sass-chokidar": "^0.0.3",
     "ol": "^4.6.4",
     "ol-mapbox-style": "^2.10.1",
@@ -13,6 +14,8 @@
     "redux": "^3.7.2"
   },
   "scripts": {
+    "build-css": "node-sass-chokidar src/ --include-path node_modules/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ --include-path node_modules/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
