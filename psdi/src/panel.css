@@ -1,20 +1,50 @@
+
+* {
+  box-sizing: border-box;
+}
 .mapContainer {
   width: 515px;
   background-color: #ffffff;
   border-radius: 4px;
   border: 1px solid #cdcdcd;
   filter: drop-shadow(0px 10px 5px #cdcdcd);
-  height: 586px;
-}
-.mapContainer .panelContainer {
 
 }
+.mapContainer .panelContainer .panel {
+  position: relative;
+  height: 586px;
+}
+
 .mapContainer .panelContainer .panel .imageContainer {
   color: #ffffff;
   background-image: url("assets/story-01-bg.png");
   background-color: #cccccc;
   height: 250px;
+  position: relative;
 }
 .mapContainer .panelContainer .panel .imageContainer .closeButton {
   text-align: right;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 14px;
+}
+.mapContainer .panelContainer .panel .imageContainer .title {
+  position: absolute;
+  bottom: 16px;
+  left: 33px;
+  font-size: 24px;
+  font-family: Futura,Trebuchet MS,Arial,sans-serif;
+  font-style: normal;
+	font-variant: normal;
+}
+.mapContainer .panelContainer .panel .storyContainer {
+  padding: 33px;
+  height: 80%;
+}
+.mapContainer .panelContainer .panel .controls {
+  position: absolute;
+  bottom: 23px;
+  text-align: right;
+  width: 100%;
+  padding-right: 33px;
 }
