@@ -32,7 +32,7 @@ class App extends Component {
 
   componentDidMount() {
     // load in the map style from a external .json
-    //store.dispatch(SdkMapActions.setContext({url: './bookmarks.json'}));
+    store.dispatch(SdkMapActions.setView([90.37,23.94], 6));
     // add the OSM source
     store.dispatch(SdkMapActions.addSource('osm', {
       type: 'raster',
@@ -49,6 +49,7 @@ class App extends Component {
       id: 'osm',
       source: 'osm',
     }));
+<<<<<<< HEAD
     const SOURCENAMES = ['paris-bakeries', 'saint-louis-bakeries'];
 
     // Fetch data from local files
@@ -123,6 +124,80 @@ class App extends Component {
     //
     // // Init source for the bookmarks
     // changeSource(SOURCENAMES[0]);
+=======
+
+    store.dispatch(SdkMapActions.addSource('stlouis', {
+      type: 'geojson',
+        data: {
+          "type": "FeatureCollection",
+          "name": "Map_pins",
+          "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+          "features": [
+            { "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.540207679982643, 24.681778761020187 ] } },
+            { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.247858964457834, 24.647041610326482 ] } },
+            { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.420253914284515, 24.663183693273464 ] } },
+            { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.350039191291202, 24.85956606418393 ] } },
+            { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 90.939401757462207, 24.327018066009312 ] } },
+            { "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.540207679982643, 24.681778761020187 ] } },
+            { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.247858964457834, 24.647041610326482 ] } },
+            { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.420253914284515, 24.663183693273464 ] } },
+            { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.350039191291202, 24.85956606418393 ] } },
+            { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 90.939401757462207, 24.327018066009312 ] } }
+          ]
+        }
+    }));
+    store.dispatch(SdkMapActions.addLayer({
+      id: 'stlouis',
+      type: 'circle',
+      source: 'stlouis',
+      paint: {
+        'circle-radius': 5,
+        'circle-color': '#f46b42',
+        'circle-stroke-color': '#3a160b',
+      }
+    }));
+
+    this.test();
+  }
+
+  test() {
+    // This is the name of the source that the bookmark component will iterate over
+    const SOURCENAMES = ['paris-bakeries', 'saint-louis-bakeries'];
+
+    // Change the souce as needed
+    const changeSource = (sourceName) => {
+      store.dispatch(bookmarkAction.changeSource(sourceName));
+    };
+    // Add bookmark to redux store
+    const addBookmark = () => {
+      store.dispatch(bookmarkAction.addBookmark(true));
+    };
+
+    // Delete bookmark to redux store
+    const deleteBookmark = () => {
+      const bookmark = store.getState().bookmark;
+      const features = store.getState().map.sources[bookmark.source].data.features;
+
+      // Simple check to make sure we have more feature to remove
+      if (features.length > 0) {
+
+        // move to the next feature before it's deleted
+        if (features.length > 1) {
+          store.dispatch(SdkMapActions.setView(features[bookmark.count + 1].geometry.coordinates, 18));
+        }
+
+        // Assumes address is unique
+        // In a larger dataset adding in a uuid would be a good idea
+        const filter = ['==', 'address', features[bookmark.count].properties.address];
+        store.dispatch(SdkMapActions.removeFeatures(bookmark.source, filter));
+      } else {
+        alert('No features left to delete');
+      }
+    };
+
+    // Init source for the bookmarks
+    //changeSource(SOURCENAMES[0]);
+>>>>>>> 65a68b00a56c2ba8679d97ad705b2cc88c8b596d
 }
 // Fetch the geoJson file from a url and add it to the map at the named source
   addDataFromGeoJSON(url, sourceName) {
