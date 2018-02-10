@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@boundlessgeo/sdk": "file:../sdk/dist",
+    "@boundlessgeo/sdk": "^2.3.0",
     "node-sass-chokidar": "^0.0.3",
     "ol": "^4.6.4",
     "ol-mapbox-style": "^2.10.1",

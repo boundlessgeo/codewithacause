@@ -32,7 +32,7 @@ class App extends Component {
 
   componentDidMount() {
     // load in the map style from a external .json
-    //store.dispatch(SdkMapActions.setContext({url: './bookmarks.json'}));
+    store.dispatch(SdkMapActions.setView([90.37,23.94], 6));
     // add the OSM source
     store.dispatch(SdkMapActions.addSource('osm', {
       type: 'raster',
@@ -49,40 +49,44 @@ class App extends Component {
       id: 'osm',
       source: 'osm',
     }));
+
+    store.dispatch(SdkMapActions.addSource('stlouis', {
+      type: 'geojson',
+        data: {
+          "type": "FeatureCollection",
+          "name": "Map_pins",
+          "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+          "features": [
+            { "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.540207679982643, 24.681778761020187 ] } },
+            { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.247858964457834, 24.647041610326482 ] } },
+            { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.420253914284515, 24.663183693273464 ] } },
+            { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.350039191291202, 24.85956606418393 ] } },
+            { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 90.939401757462207, 24.327018066009312 ] } },
+            { "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.540207679982643, 24.681778761020187 ] } },
+            { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.247858964457834, 24.647041610326482 ] } },
+            { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.420253914284515, 24.663183693273464 ] } },
+            { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 89.350039191291202, 24.85956606418393 ] } },
+            { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [ 90.939401757462207, 24.327018066009312 ] } }
+          ]
+        }
+    }));
+    store.dispatch(SdkMapActions.addLayer({
+      id: 'stlouis',
+      type: 'circle',
+      source: 'stlouis',
+      paint: {
+        'circle-radius': 5,
+        'circle-color': '#f46b42',
+        'circle-stroke-color': '#3a160b',
+      }
+    }));
+
     this.test();
   }
 
   test() {
     // This is the name of the source that the bookmark component will iterate over
     const SOURCENAMES = ['paris-bakeries', 'saint-louis-bakeries'];
-
-    // Fetch the geoJson file from a url and add it to the map at the named source
-    const addDataFromGeoJSON = (url, sourceName) => {
-      // Fetch URL
-      return fetch(url)
-        .then(
-          response => console.log(response),//response.json(),
-          error => console.error('An error occured.', error),
-        )
-        // addFeatures with the features, source name
-        // .then(json => store.dispatch(mapActions.addFeatures(sourceName, json)));
-        .then(json => {
-          store.dispatch(SdkMapActions.addSource(sourceName, {
-            type: 'geojson',
-            data: json
-          }));
-          store.dispatch(SdkMapActions.addLayer({
-            id: sourceName,
-            type: 'circle',
-            source: sourceName,
-            paint: {
-              'circle-radius': 5,
-              'circle-color': '#f46b42',
-              'circle-stroke-color': '#3a160b',
-            }
-          }));
-        });
-    };
 
     // Change the souce as needed
     const changeSource = (sourceName) => {
@@ -115,12 +119,8 @@ class App extends Component {
       }
     };
 
-    // Fetch data from local files
-    addDataFromGeoJSON('./data/stlouis.json', SOURCENAMES[1]);
-    addDataFromGeoJSON('./data/paris.json', SOURCENAMES[0]);
-
     // Init source for the bookmarks
-    changeSource(SOURCENAMES[0]);
+    //changeSource(SOURCENAMES[0]);
 }
   // // add the OSM source
   // store.dispatch(SdkMapActions.addSource('osm', {
@@ -141,7 +141,6 @@ class App extends Component {
 
 
   render() {
-    this.test();
     return (
       <div className="App">
         <Provider store={store}>
