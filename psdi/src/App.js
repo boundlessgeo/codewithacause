@@ -7,12 +7,14 @@ import SdkMap from '@boundlessgeo/sdk/components/map';
 import SdkMapReducer from '@boundlessgeo/sdk/reducers/map';
 import * as SdkMapActions from '@boundlessgeo/sdk/actions/map';
 
+import SdkPopup from '@boundlessgeo/sdk/components/map/popup';
+
 const store = createStore(combineReducers({
   'map': SdkMapReducer,
 }));
 
 class App extends Component {
-  
+
   componentDidMount() {
   // add the OSM source
   store.dispatch(SdkMapActions.addSource('osm', {
@@ -31,18 +33,30 @@ class App extends Component {
     source: 'osm',
   }));
   }
-  
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <SdkMap store={store} />
+        <SdkMap
+          store={store}
+          includeFeaturesOnClick
+          onClick={(map, xy, featurePromise) => {
+            featurePromise.then((featureGroups) => {
+            // featureGroups is an array of objects. The key of each object
+            // is a layer from the map. Here, only one layer is included.
+            const layers = Object.keys(featureGroups[0]);
+            const layer = layers[0];
+            // collect every feature from the layer.
+            // in this case, only one feature will be returned in the promise.
+            const features = featureGroups[0][layer];
+
+            if (features === undefined) {
+              // no features, :( Let the user know nothing was there.
+              map.addPopup(<SdkPopup coordinate={xy}><i>This is a popup!</i></SdkPopup>);
+            }
+          });
+      }}
+    />
       </div>
     );
   }
