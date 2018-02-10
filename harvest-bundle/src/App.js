@@ -31,7 +31,9 @@ class App extends Component {
 }
   render() {
     return (
-      <SdkMap store={store} />
+      <div>
+        <SdkMap store={store} />
+      <div/>
     );
   }
 }

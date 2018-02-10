@@ -88,6 +88,82 @@ class App extends Component {
       id: 'osm',
       source: 'osm',
     }));
+<<<<<<< HEAD
+    const SOURCENAMES = ['paris-bakeries', 'saint-louis-bakeries'];
+
+    // Fetch data from local files
+    this.addDataFromGeoJSON('./data/stlouis.json', SOURCENAMES[1]);
+    this.addDataFromGeoJSON('./data/paris.json', SOURCENAMES[0]);
+
+
+    // // This is the name of the source that the bookmark component will iterate over
+    //
+    // // Fetch the geoJson file from a url and add it to the map at the named source
+    // const addDataFromGeoJSON = (url, sourceName) => {
+    //   // Fetch URL
+    //   return fetch(url)
+    //     .then(
+    //       response => console.log(response),//response.json(),
+    //       error => console.error('An error occured.', error),
+    //     )
+    //     // addFeatures with the features, source name
+    //     // .then(json => store.dispatch(mapActions.addFeatures(sourceName, json)));
+    //     .then(json => {
+    //       store.dispatch(SdkMapActions.addSource(sourceName, {
+    //         type: 'geojson',
+    //         data: json
+    //       }));
+    //       store.dispatch(SdkMapActions.addLayer({
+    //         id: sourceName,
+    //         type: 'circle',
+    //         source: sourceName,
+    //         paint: {
+    //           'circle-radius': 5,
+    //           'circle-color': '#f46b42',
+    //           'circle-stroke-color': '#3a160b',
+    //         }
+    //       }));
+    //     });
+    // };
+    //
+    // // Change the souce as needed
+    // const changeSource = (sourceName) => {
+    //   store.dispatch(bookmarkAction.changeSource(sourceName));
+    // };
+    // // Add bookmark to redux store
+    // const addBookmark = () => {
+    //   store.dispatch(bookmarkAction.addBookmark(true));
+    // };
+    //
+    // // Delete bookmark to redux store
+    // const deleteBookmark = () => {
+    //   const bookmark = store.getState().bookmark;
+    //   const features = store.getState().map.sources[bookmark.source].data.features;
+    //
+    //   // Simple check to make sure we have more feature to remove
+    //   if (features.length > 0) {
+    //
+    //     // move to the next feature before it's deleted
+    //     if (features.length > 1) {
+    //       store.dispatch(SdkMapActions.setView(features[bookmark.count + 1].geometry.coordinates, 18));
+    //     }
+    //
+    //     // Assumes address is unique
+    //     // In a larger dataset adding in a uuid would be a good idea
+    //     const filter = ['==', 'address', features[bookmark.count].properties.address];
+    //     store.dispatch(SdkMapActions.removeFeatures(bookmark.source, filter));
+    //   } else {
+    //     alert('No features left to delete');
+    //   }
+    // };
+    //
+    // // Fetch data from local files
+    // addDataFromGeoJSON('./data/stlouis.json', SOURCENAMES[1]);
+    // addDataFromGeoJSON('./data/paris.json', SOURCENAMES[0]);
+    //
+    // // Init source for the bookmarks
+    // changeSource(SOURCENAMES[0]);
+=======
 
     store.dispatch(SdkMapActions.addSource('stlouis', {
       type: 'geojson',
@@ -160,25 +236,35 @@ class App extends Component {
 
     // Init source for the bookmarks
     //changeSource(SOURCENAMES[0]);
+>>>>>>> 65a68b00a56c2ba8679d97ad705b2cc88c8b596d
 }
-  // // add the OSM source
-  // store.dispatch(SdkMapActions.addSource('osm', {
-  //   type: 'raster',
-  //   tileSize: 256,
-  //   tiles: [
-  //     'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  //     'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  //     'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  //   ],
-  // }));
-  //
-  // // add an OSM layer
-  // store.dispatch(SdkMapActions.addLayer({
-  //   id: 'osm',
-  //   source: 'osm',
-  // }));
-
-
+// Fetch the geoJson file from a url and add it to the map at the named source
+  addDataFromGeoJSON(url, sourceName) {
+    // Fetch URL
+    return fetch(url)
+      .then(
+        response => response.json(),
+        error => console.error('An error occured.', error),
+      )
+      // addFeatures with the features, source name
+      // .then(json => store.dispatch(mapActions.addFeatures(sourceName, json)));
+      .then(json => {
+        store.dispatch(SdkMapActions.addSource(sourceName, {
+          type: 'geojson',
+          data: json
+        }));
+        store.dispatch(SdkMapActions.addLayer({
+          id: sourceName,
+          type: 'circle',
+          source: sourceName,
+          paint: {
+            'circle-radius': 5,
+            'circle-color': '#f46b42',
+            'circle-stroke-color': '#3a160b',
+          }
+        }));
+      });
+  };
   render() {
     return (
       <div className="App">
