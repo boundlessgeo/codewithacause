@@ -15,32 +15,21 @@ class BookmarkComponent extends React.PureComponent {
       const feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
       return (
         <div className='panelContainer'>
-          <div className='panel'>
-            <h3>{feature.properties.Title}</h3>
-            <div className="bookmarkItem">
-              <div>
-                <span className="label">Story:</span> <span className="value">{feature.properties.Story}</span>
-              </div>
-              <div>
-                <span className="label">Summary:</span> <span className="value">{feature.properties.Summary}</span>
-              </div>
-              <div>
-                <span className="label">Video:</span> <span className="value"><a href={feature.properties.Link_video}>{feature.properties.Link_video}</a></span>
-              </div>
-              <div>
-                <span className="label">Image:</span> <span className="value"><a href={feature.properties.Link_Image}>{feature.properties.Link_Image}</a></span>
-              </div>
-              <div>
-                <span className="label">Date:</span> <span className="value">{feature.properties.Date}</span>
-              </div>
-              <div>
-                <span className="label">Lat/Long: </span> <span className="value">
-                  <span className='coords'>{feature.geometry.coordinates[1]}</span>, <span className='coords'>{feature.geometry.coordinates[0]}</span>
-                </span>
+          <div className="panel">
+            <div className="imageContainer">
+              <div className="closeButton fa fa-close"></div>
+              <div className="title">
+                {feature.properties.Title}
               </div>
             </div>
-            <MoveButtonComponent store={this.props.store} />
+            <div className="storyContainer">
+              {feature.properties.Story}
+            </div>
+            <div>
+              <MoveButtonComponent store={this.props.store} />
+            </div>
           </div>
+
         </div>
       );
     } else {

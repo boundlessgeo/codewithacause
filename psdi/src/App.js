@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import fetch from 'isomorphic-fetch';
 
 import './App.css';
 
@@ -10,13 +8,10 @@ import {Provider} from 'react-redux';
 
 import SdkMap from '@boundlessgeo/sdk/components/map';
 import SdkMapReducer from '@boundlessgeo/sdk/reducers/map';
-import SdkZoomControl from '@boundlessgeo/sdk/components/map/zoom-control';
 
 import * as SdkMapActions from '@boundlessgeo/sdk/actions/map';
 
 import BookmarkComponent from './bookmarks';
-import MoveButtonComponent from './moveButton';
-import AddBookmarkComponent from './addBookmark';
 
 import bookmarkReducer from './reducer';
 import * as bookmarkAction from './action';
@@ -38,6 +33,7 @@ class MarkFeaturesPopup extends SdkPopup {
   markFeatures(evt) {
     const feature_ids = [];
     const features = this.props.features;
+    console.log(features)
 
     for (let i = 0, ii = features.length; i < ii; i++) {
       // create an array of ids to be removed from the map.
@@ -119,46 +115,7 @@ class App extends Component {
         'circle-stroke-color': '#3a160b',
       }
     }));
-
-    this.test();
-  }
-
-  test() {
-    // This is the name of the source that the bookmark component will iterate over
-    const SOURCENAMES = ['paris-bakeries', 'saint-louis-bakeries'];
-
-    // Change the souce as needed
-    const changeSource = (sourceName) => {
-      store.dispatch(bookmarkAction.changeSource(sourceName));
-    };
-    // Add bookmark to redux store
-    const addBookmark = () => {
-      store.dispatch(bookmarkAction.addBookmark(true));
-    };
-
-    // Delete bookmark to redux store
-    const deleteBookmark = () => {
-      const bookmark = store.getState().bookmark;
-      const features = store.getState().map.sources[bookmark.source].data.features;
-
-      // Simple check to make sure we have more feature to remove
-      if (features.length > 0) {
-
-        // move to the next feature before it's deleted
-        if (features.length > 1) {
-          store.dispatch(SdkMapActions.setView(features[bookmark.count + 1].geometry.coordinates, 18));
-        }
-
-        // Assumes address is unique
-        // In a larger dataset adding in a uuid would be a good idea
-        const filter = ['==', 'address', features[bookmark.count].properties.address];
-        store.dispatch(SdkMapActions.removeFeatures(bookmark.source, filter));
-      } else {
-        alert('No features left to delete');
-      }
-    };
-    // Init source for the bookmarks
-    changeSource('stories');
+    store.dispatch(bookmarkAction.changeSource('stories'));
   }
 
   render() {
@@ -167,7 +124,6 @@ class App extends Component {
         <Provider store={store}>
           <div className='mapContainer'>
             <SdkMap
-              className='map'
               includeFeaturesOnClick
               onClick={(map, xy, featurePromise) => {
                 featurePromise.then((featureGroups) => {
@@ -189,7 +145,7 @@ class App extends Component {
                 });
               }}
             />
-            <BookmarkComponent className='panelContainer' store={store}/>
+            <BookmarkComponent store={store}/>
           </div>
         </Provider>
       </div>
