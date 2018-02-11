@@ -6,7 +6,6 @@ import MoveButtonComponent from './moveButton';
 // Custom Bookmark Component
 class BookmarkComponent extends React.PureComponent {
   render() {
-    console.log(this.props.map.sources)
     // Get the feature selected by the count in state
     // Render the modal window using style from app.css
     const count = this.props.bookmark.count;
@@ -17,7 +16,6 @@ class BookmarkComponent extends React.PureComponent {
 
       let cleanString = feature.properties.description.split(" ")[1].slice(5);
       cleanString = cleanString.slice(0,cleanString.length-1);
-      console.log(cleanString)
       const image = {backgroundImage: `url("${cleanString}")`, color:"#00000" };
 
       return (
