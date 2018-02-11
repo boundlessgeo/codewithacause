@@ -116,8 +116,6 @@ class App extends Component {
 
     addDataFromGeoJSON('map_data/Map_pins.geojson');
     store.dispatch(bookmarkAction.changeSource('stories'));
-    //store.dispatch(SdkMapActions.setView([86.3, 24.683], 6));
-    //store.dispatch(bookmarkAction.addBookmark(true));
 
   }
 
