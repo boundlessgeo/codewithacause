@@ -124,6 +124,7 @@ class App extends Component {
         <Provider store={store}>
           <div className='mapContainer'>
             <SdkMap
+              className="map"
               includeFeaturesOnClick
               onClick={(map, xy, featurePromise) => {
                 featurePromise.then((featureGroups) => {
