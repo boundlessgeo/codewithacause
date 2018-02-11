@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import fetch from 'isomorphic-fetch';
 
-import './App.css';
+import './s/App.css';
+import farms from './s/farms.json';
 
 import { createStore, combineReducers, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
@@ -35,7 +36,6 @@ class MarkFeaturesPopup extends SdkPopup {
   markFeatures(evt) {
     const feature_ids = [];
     const features = this.props.features;
-    console.log(features)
 
     for (let i = 0, ii = features.length; i < ii; i++) {
       // create an array of ids to be removed from the map.
@@ -88,33 +88,46 @@ class App extends Component {
       source: 'osm',
     }));
 
-    const addDataFromGeoJSON = (url) => {
-
-      return fetch(url)
-      .then(
-        response => response.json(),
-        error => console.error('An error occured.', error),
-      )
-
-      .then(json => {
-        store.dispatch(SdkMapActions.addSource('stories', {
-          type: 'geojson',
-          data: json
-        }));
-        store.dispatch(SdkMapActions.addLayer({
-          id: 'stories',
-          type: 'circle',
-          source: 'stories',
-          paint: {
-            'circle-radius': 5,
-            'circle-color': '#f46b42',
-            'circle-stroke-color': '#3a160b',
-          }
-        }));
-      });
-    }
-
-    addDataFromGeoJSON('map_data/Farms.geojson');
+    // const addDataFromGeoJSON = (url) => {
+    //
+    //   return fetch(url)
+    //   .then(
+    //     response => response.json(),
+    //     error => console.error('An error occured.', error),
+    //   )
+    //
+    //   .then(json => {
+    //     store.dispatch(SdkMapActions.addSource('stories', {
+    //       type: 'geojson',
+    //       data: json
+    //     }));
+    //     store.dispatch(SdkMapActions.addLayer({
+    //       id: 'stories',
+    //       type: 'circle',
+    //       source: 'stories',
+    //       paint: {
+    //         'circle-radius': 5,
+    //         'circle-color': '#f46b42',
+    //         'circle-stroke-color': '#3a160b',
+    //       }
+    //     }));
+    //   });
+    // }
+    // addDataFromGeoJSON('/s/Farms.geojson');
+    store.dispatch(SdkMapActions.addSource('stories', {
+      type: 'geojson',
+      data: farms
+    }));
+    store.dispatch(SdkMapActions.addLayer({
+      id: 'stories',
+      type: 'circle',
+      source: 'stories',
+      paint: {
+        'circle-radius': 5,
+        'circle-color': '#f46b42',
+        'circle-stroke-color': '#3a160b',
+      }
+    }));
     store.dispatch(bookmarkAction.changeSource('stories'));
 
   }

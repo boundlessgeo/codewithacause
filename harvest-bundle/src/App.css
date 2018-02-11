@@ -1,3 +1,6 @@
+.ol-attribution {
+  display: none;
+}
 .mapContainer {
   position: relative; }
   .mapContainer .map {
