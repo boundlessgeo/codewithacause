@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9dc805f4a5502c8ad7dd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b728ea2e69e7b112ab85"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -3791,6 +3791,164 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps, 
 
 /***/ }),
 
+/***/ "./node_modules/@boundlessgeo/sdk/components/map/popup.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@boundlessgeo/sdk/components/map/popup.js ***!
+  \****************************************************************/
+/*! dynamic exports provided */
+/*! exports used: default */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Copyright 2015-present Boundless Spatial Inc., http://boundlessgeo.com
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Licensed under the Apache License, Version 2.0 (the "License").
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * You may not use this file except in compliance with the License.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * You may obtain a copy of the License at
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * http://www.apache.org/licenses/LICENSE-2.0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Unless required by applicable law or agreed to in writing, software
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * See the License for the specific language governing permissions and limitations
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * under the License.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+/** @module components/map/popup
+ * @desc SDK Popup Component
+ */
+
+var Popup = function (_React$PureComponent) {
+  _inherits(Popup, _React$PureComponent);
+
+  function Popup(props) {
+    _classCallCheck(this, Popup);
+
+    var _this = _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
+
+    _this.close = _this.close.bind(_this);
+    _this.state = {
+      closed: false
+    };
+    return _this;
+  }
+
+  _createClass(Popup, [{
+    key: 'close',
+    value: function close(evt) {
+      var _this2 = this;
+
+      if (evt) {
+        evt.stopPropagation();
+      }
+      this.setState({ closed: true });
+      this.setState({ closed: true }, function () {
+        if (_this2.map) {
+          _this2.map.updatePopups();
+        }
+      });
+      this.props.onClose();
+    }
+  }, {
+    key: 'setMap',
+    value: function setMap(map) {
+      this.map = map;
+    }
+  }, {
+    key: 'renderPopup',
+    value: function renderPopup(children) {
+      var _this3 = this;
+
+      var close_btn = false;
+      if (this.props.closeable) {
+        close_btn = _react2.default.createElement('i', { tabIndex: 0, role: 'link', onClick: function onClick() {
+            _this3.close();
+          }, ref: function ref(c) {
+            if (c) {
+              c.addEventListener('click', _this3.close);
+            }
+          }, className: 'sdk-popup-closer fa fa-times' });
+      }
+      if (this.state.closed) {
+        return false;
+      }
+      var className = 'sdk-popup-root';
+      if (this.props.className) {
+        className = className + ' ' + this.props.className;
+      }
+
+      return _react2.default.createElement(
+        'div',
+        { style: this.props.style, className: className },
+        close_btn,
+        _react2.default.createElement(
+          'div',
+          { id: 'sdk-popup-container' },
+          _react2.default.Children.only(children)
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.renderPopup(this.props.children);
+    }
+  }]);
+
+  return Popup;
+}(_react2.default.PureComponent);
+
+Popup.propTypes = {
+  // this unused prop warning is ignored because the coordinate is
+  //  a required prop to rightly render the popup on the map.
+  // eslint-disable-next-line
+  /** Coordinate where to render the popup in the map. */
+  coordinate: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.number), _propTypes2.default.object]).isRequired,
+  /** Child component(s). */
+  children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.node, _propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.arrayOf(_propTypes2.default.element)]),
+  /** Should we be able to close the popup? */
+  closeable: _propTypes2.default.bool,
+  /** onClose callback function. */
+  onClose: _propTypes2.default.func,
+  /** Style config object. */
+  style: _propTypes2.default.object,
+  /** Css class name to apply. */
+  className: _propTypes2.default.string
+};
+
+Popup.defaultProps = {
+  children: '',
+  closeable: false,
+  onClose: function onClose() {
+    // do nothing
+  }
+};
+
+exports.default = Popup;
+
+/***/ }),
+
 /***/ "./node_modules/@boundlessgeo/sdk/constants.js":
 /*!*****************************************************!*\
   !*** ./node_modules/@boundlessgeo/sdk/constants.js ***!
@@ -6156,7 +6314,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/li
 
 
 // module
-exports.push([module.i, "/*\n * Include the SDK stylesheet\n */\n.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-nav-compass {\n  cursor: default; }\n\n.sdk-mapbox-gl-popup {\n  font-size: 14px;\n  position: absolute;\n  background-color: white;\n  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  padding: 18px 15px 15px;\n  border-radius: 10px;\n  border: 1px solid #cccccc; }\n  .sdk-mapbox-gl-popup:after, .sdk-mapbox-gl-popup:before {\n    top: 100%;\n    border: solid transparent;\n    content: \" \";\n    height: 0;\n    width: 0;\n    position: absolute; }\n  .sdk-mapbox-gl-popup:after {\n    border-top-color: white;\n    border-width: 10px;\n    left: 48px;\n    margin-left: -10px; }\n  .sdk-mapbox-gl-popup:before {\n    border-top-color: #cccccc;\n    border-width: 11px;\n    left: 48px;\n    margin-left: -11px; }\n  .sdk-mapbox-gl-popup #sdk-popup-container {\n    max-height: 240px;\n    overflow: auto; }\n\n.sdk-popup {\n  font-size: 14px;\n  position: absolute;\n  background-color: white;\n  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  padding: 18px 15px 15px;\n  border-radius: 10px;\n  border: 1px solid #cccccc;\n  bottom: 12px;\n  left: -50px; }\n  .sdk-popup:after, .sdk-popup:before {\n    top: 100%;\n    border: solid transparent;\n    content: \" \";\n    height: 0;\n    width: 0;\n    position: absolute; }\n  .sdk-popup:after {\n    border-top-color: white;\n    border-width: 10px;\n    left: 48px;\n    margin-left: -10px; }\n  .sdk-popup:before {\n    border-top-color: #cccccc;\n    border-width: 11px;\n    left: 48px;\n    margin-left: -11px; }\n  .sdk-popup #sdk-popup-container {\n    max-height: 240px;\n    overflow: auto; }\n\n.sdk-popup-closer {\n  text-decoration: none;\n  position: absolute;\n  top: 7px;\n  right: 8px;\n  cursor: pointer; }\n\n.controls .sdk-slider-control {\n  z-index: 1;\n  position: absolute;\n  top: 160px;\n  left: -75px;\n  -webkit-transform: rotate(-90deg);\n  -ms-transform: rotate(-90deg);\n  transform: rotate(-90deg); }\n  .controls .sdk-slider-control input[type=range] {\n    background-color: transparent;\n    -webkit-appearance: none;\n    width: 201px; }\n    .controls .sdk-slider-control input[type=range]:focus {\n      outline: 0; }\n    .controls .sdk-slider-control input[type=range]::-webkit-slider-runnable-track {\n      cursor: pointer;\n      height: 24px;\n      -webkit-transition: all .2s ease;\n      -o-transition: all .2s ease;\n      transition: all .2s ease;\n      width: 201px;\n      background: #ededed;\n      border: 1px solid #b4b4b4;\n      border-radius: 4px; }\n    .controls .sdk-slider-control input[type=range]::-webkit-slider-thumb {\n      background: #29728d;\n      border: 1px solid #ffffff;\n      border-radius: 4px;\n      cursor: pointer;\n      height: 22px;\n      width: 14px;\n      -webkit-appearance: none; }\n    .controls .sdk-slider-control input[type=range]::-moz-range-track {\n      cursor: pointer;\n      height: 24px;\n      -webkit-transition: all .2s ease;\n      -o-transition: all .2s ease;\n      transition: all .2s ease;\n      width: 201px;\n      background: #ededed;\n      border: 1px solid #b4b4b4;\n      border-radius: 4px; }\n    .controls .sdk-slider-control input[type=range]::-moz-range-thumb {\n      background: #29728d;\n      border: 1px solid #ffffff;\n      border-radius: 4px;\n      cursor: pointer;\n      height: 22px;\n      width: 14px; }\n    .controls .sdk-slider-control input[type=range]::-ms-track {\n      cursor: pointer;\n      height: 24px;\n      -webkit-transition: all .2s ease;\n      -o-transition: all .2s ease;\n      transition: all .2s ease;\n      width: 201px;\n      background: transparent;\n      border-color: transparent;\n      border-width: 11px 0;\n      color: transparent; }\n    .controls .sdk-slider-control input[type=range]::-ms-fill-lower {\n      background: #e0e0e0;\n      border: 1px solid #b4b4b4;\n      border-radius: 8px; }\n    .controls .sdk-slider-control input[type=range]::-ms-fill-upper {\n      background: #ededed;\n      border: 1px solid #b4b4b4;\n      border-radius: 8px; }\n    .controls .sdk-slider-control input[type=range]::-ms-thumb {\n      background: #29728d;\n      border: 1px solid #ffffff;\n      border-radius: 4px;\n      cursor: pointer;\n      height: 22px;\n      width: 14px;\n      margin-top: 0; }\n\n@-moz-document url-prefix() {\n  .controls .sdk-slider-control {\n    top: calc(160px + 4px); } }\n\n.sdk-zoom-control {\n  z-index: 1;\n  border-radius: 4px;\n  position: absolute;\n  top: 20px;\n  left: 12px;\n  background-color: #e0e0e0; }\n  .sdk-zoom-control button {\n    border-radius: 4px 4px 0 0;\n    background-color: #f1f1f1;\n    font-size: 1.14em;\n    font-weight: bold;\n    display: block;\n    width: 1.55em;\n    height: 1.55em;\n    border: 1px solid #b4b4b4; }\n    .sdk-zoom-control button:focus {\n      outline: 0; }\n    .sdk-zoom-control button:hover {\n      background-color: rgba(0, 0, 0, 0.05); }\n  .sdk-zoom-control button.sdk-zoom-in {\n    border-bottom: none; }\n  .sdk-zoom-control button.sdk-zoom-out {\n    border-radius: 0 0 4px 4px;\n    border-top: 1px solid #b4b4b4; }\n\n.sdk-scale-line {\n  z-index: 1;\n  background: #29728d;\n  border-radius: 4px;\n  bottom: .5em;\n  left: .5em;\n  padding: 2px;\n  position: absolute; }\n\n.sdk-scale-line-inner {\n  border: 1px solid #ededed;\n  border-top: none;\n  color: #ededed;\n  font-size: 10px;\n  text-align: center;\n  margin: 1px;\n  will-change: contents, width; }\n\n/** SDK button. */\nbutton.sdk-btn {\n  background-color: #f58d50;\n  color: #fff;\n  display: inline-block;\n  font-weight: 400;\n  line-height: 1.25;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  border: 1px solid transparent;\n  padding: .5rem 1rem;\n  font-size: 1rem;\n  border-radius: .25rem; }\n\nli.sdk-layer {\n  list-style: none; }\n\n.sdk-map {\n  position: relative; }\n\n.sdk-map .controls {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%; }\n\n.App {\n  text-align: center; }\n\n.App-logo {\n  -webkit-animation: App-logo-spin infinite 20s linear;\n          animation: App-logo-spin infinite 20s linear;\n  height: 80px; }\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white; }\n\n.App-title {\n  font-size: 1.5em; }\n\n.App-intro {\n  font-size: large; }\n\n@-webkit-keyframes App-logo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes App-logo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n", ""]);
+exports.push([module.i, ".mapContainer {\n  position: relative; }\n  .mapContainer .map {\n    background-color: #ffffff;\n    border-radius: 4px;\n    border: 1px solid #cdcdcd;\n    margin: 3em; }\n\n.mapContainer .panelContainer {\n  position: absolute;\n  background-color: #ffffff;\n  top: 30px;\n  left: 85px;\n  border-radius: 4px;\n  border: 1px solid #cdcdcd;\n  -webkit-filter: drop-shadow(0px 10px 5px #757575);\n          filter: drop-shadow(0px 10px 5px #757575);\n  height: 586px;\n  width: 32%; }\n  .mapContainer .panelContainer .panel .imageContainer {\n    color: #ffffff;\n    background-image: url(\"https://lh3.googleusercontent.com/vTeisCIKR0kPadLu_u2_qn4TrBKjeyMgr-l6ebZO8C1XYPOvAvyJVOjCbL96UyB3yt48SUF215pZdrT7y-s0AK9L_0NjiUjIjrzpMkP6pxXB-IEjFddGLpFBwjTa1WeI0-nJpQ\");\n    background-color: #cccccc;\n    height: 250px;\n    position: relative; }\n    .mapContainer .panelContainer .panel .imageContainer .closeButton {\n      text-align: right;\n      width: 100%;\n      padding-top: 10px;\n      padding-right: 14px; }\n    .mapContainer .panelContainer .panel .imageContainer .title {\n      position: absolute;\n      bottom: 16px;\n      left: 33px;\n      font-size: 24px;\n      font-family: Futura,Trebuchet MS,Arial,sans-serif;\n      font-style: normal;\n      font-variant: normal; }\n  .mapContainer .panelContainer .storyContainer {\n    padding: 33px;\n    height: 80%; }\n  .mapContainer .panelContainer .controls {\n    position: absolute;\n    bottom: 23px;\n    text-align: right;\n    width: 100%;\n    padding-right: 33px; }\n\n* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\n/*\n * Include the SDK stylesheet\n */\n.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-nav-compass {\n  cursor: default; }\n\n.sdk-mapbox-gl-popup {\n  font-size: 14px;\n  position: absolute;\n  background-color: white;\n  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  padding: 18px 15px 15px;\n  border-radius: 10px;\n  border: 1px solid #cccccc; }\n\n.sdk-mapbox-gl-popup:after, .sdk-mapbox-gl-popup:before {\n  top: 100%;\n  border: solid transparent;\n  content: \" \";\n  height: 0;\n  width: 0;\n  position: absolute; }\n\n.sdk-mapbox-gl-popup:after {\n  border-top-color: white;\n  border-width: 10px;\n  left: 48px;\n  margin-left: -10px; }\n\n.sdk-mapbox-gl-popup:before {\n  border-top-color: #cccccc;\n  border-width: 11px;\n  left: 48px;\n  margin-left: -11px; }\n\n.sdk-mapbox-gl-popup #sdk-popup-container {\n  max-height: 240px;\n  overflow: auto; }\n\n.sdk-popup {\n  font-size: 14px;\n  position: absolute;\n  background-color: white;\n  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  padding: 18px 15px 15px;\n  border-radius: 10px;\n  border: 1px solid #cccccc;\n  bottom: 12px;\n  left: -50px; }\n\n.sdk-popup:after, .sdk-popup:before {\n  top: 100%;\n  border: solid transparent;\n  content: \" \";\n  height: 0;\n  width: 0;\n  position: absolute; }\n\n.sdk-popup:after {\n  border-top-color: white;\n  border-width: 10px;\n  left: 48px;\n  margin-left: -10px; }\n\n.sdk-popup:before {\n  border-top-color: #cccccc;\n  border-width: 11px;\n  left: 48px;\n  margin-left: -11px; }\n\n.sdk-popup #sdk-popup-container {\n  max-height: 240px;\n  overflow: auto; }\n\n.sdk-popup-closer {\n  text-decoration: none;\n  position: absolute;\n  top: 7px;\n  right: 8px;\n  cursor: pointer; }\n\n.controls .sdk-slider-control {\n  z-index: 1;\n  position: absolute;\n  top: 160px;\n  left: -75px;\n  -webkit-transform: rotate(-90deg);\n  -ms-transform: rotate(-90deg);\n  transform: rotate(-90deg); }\n\n.controls .sdk-slider-control input[type=range] {\n  background-color: transparent;\n  -webkit-appearance: none;\n  width: 201px; }\n\n.controls .sdk-slider-control input[type=range]:focus {\n  outline: 0; }\n\n.controls .sdk-slider-control input[type=range]::-webkit-slider-runnable-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px; }\n\n.controls .sdk-slider-control input[type=range]::-webkit-slider-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px;\n  -webkit-appearance: none; }\n\n.controls .sdk-slider-control input[type=range]::-moz-range-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px; }\n\n.controls .sdk-slider-control input[type=range]::-moz-range-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: transparent;\n  border-color: transparent;\n  border-width: 11px 0;\n  color: transparent; }\n\n.controls .sdk-slider-control input[type=range]::-ms-fill-lower {\n  background: #e0e0e0;\n  border: 1px solid #b4b4b4;\n  border-radius: 8px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-fill-upper {\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 8px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px;\n  margin-top: 0; }\n\n@-moz-document url-prefix() {\n  .controls .sdk-slider-control {\n    top: calc(160px + 4px); } }\n\n.sdk-zoom-control {\n  z-index: 1;\n  border-radius: 4px;\n  position: absolute;\n  top: 20px;\n  left: 12px;\n  background-color: #e0e0e0; }\n\n.sdk-zoom-control button {\n  border-radius: 4px 4px 0 0;\n  background-color: #f1f1f1;\n  font-size: 1.14em;\n  font-weight: bold;\n  display: block;\n  width: 1.55em;\n  height: 1.55em;\n  border: 1px solid #b4b4b4; }\n\n.sdk-zoom-control button:focus {\n  outline: 0; }\n\n.sdk-zoom-control button:hover {\n  background-color: rgba(0, 0, 0, 0.05); }\n\n.sdk-zoom-control button.sdk-zoom-in {\n  border-bottom: none; }\n\n.sdk-zoom-control button.sdk-zoom-out {\n  border-radius: 0 0 4px 4px;\n  border-top: 1px solid #b4b4b4; }\n\n.sdk-scale-line {\n  z-index: 1;\n  background: #29728d;\n  border-radius: 4px;\n  bottom: .5em;\n  left: .5em;\n  padding: 2px;\n  position: absolute; }\n\n.sdk-scale-line-inner {\n  border: 1px solid #ededed;\n  border-top: none;\n  color: #ededed;\n  font-size: 10px;\n  text-align: center;\n  margin: 1px;\n  will-change: contents, width; }\n\n/** SDK button. */\nbutton.sdk-btn {\n  background-color: #f58d50;\n  color: #fff;\n  display: inline-block;\n  font-weight: 400;\n  line-height: 1.25;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  border: 1px solid transparent;\n  padding: .5rem 1rem;\n  font-size: 1rem;\n  border-radius: .25rem; }\n\nli.sdk-layer {\n  list-style: none; }\n\n.sdk-map {\n  position: relative; }\n\n.sdk-map .controls {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%; }\n\n.App {\n  text-align: center; }\n\n.App-logo {\n  -webkit-animation: App-logo-spin infinite 20s linear;\n          animation: App-logo-spin infinite 20s linear;\n  height: 80px; }\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white; }\n\n.App-title {\n  font-size: 1.5em; }\n\n.App-intro {\n  font-size: large; }\n\n@-webkit-keyframes App-logo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes App-logo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n", ""]);
 
 // exports
 
@@ -86784,7 +86942,7 @@ function whenMapDispatchToPropsIsMissing(mapDispatchToProps) {
 
 function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
   return mapDispatchToProps && typeof mapDispatchToProps === 'object' ? Object(__WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__["a" /* wrapMapToPropsConstant */])(function (dispatch) {
-    return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["a" /* bindActionCreators */])(mapDispatchToProps, dispatch);
+    return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* bindActionCreators */])(mapDispatchToProps, dispatch);
   }) : undefined;
 }
 
@@ -88764,15 +88922,51 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/redux-thunk/lib/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/redux-thunk/lib/index.js ***!
+  \***********************************************/
+/*! dynamic exports provided */
+/*! exports used: default */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+function createThunkMiddleware(extraArgument) {
+  return function (_ref) {
+    var dispatch = _ref.dispatch,
+        getState = _ref.getState;
+    return function (next) {
+      return function (action) {
+        if (typeof action === 'function') {
+          return action(dispatch, getState, extraArgument);
+        }
+
+        return next(action);
+      };
+    };
+  };
+}
+
+var thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+exports['default'] = thunk;
+
+/***/ }),
+
 /***/ "./node_modules/redux/es/applyMiddleware.js":
 /*!**************************************************!*\
   !*** ./node_modules/redux/es/applyMiddleware.js ***!
   \**************************************************/
 /*! exports provided: default */
+/*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export default */
+/* harmony export (immutable) */ __webpack_exports__["a"] = applyMiddleware;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(/*! ./compose */ "./node_modules/redux/es/compose.js");
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -89345,7 +89539,7 @@ var ActionTypes = {
   !*** ./node_modules/redux/es/index.js ***!
   \****************************************/
 /*! exports provided: createStore, combineReducers, bindActionCreators, applyMiddleware, compose */
-/*! exports used: bindActionCreators, combineReducers, createStore */
+/*! exports used: applyMiddleware, bindActionCreators, combineReducers, createStore */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -89355,10 +89549,10 @@ var ActionTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(/*! ./applyMiddleware */ "./node_modules/redux/es/applyMiddleware.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(/*! ./compose */ "./node_modules/redux/es/compose.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(/*! ./utils/warning */ "./node_modules/redux/es/utils/warning.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
-/* unused harmony reexport applyMiddleware */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__["a"]; });
 /* unused harmony reexport compose */
 
 
@@ -90844,17 +91038,23 @@ if(true) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logo_svg__ = __webpack_require__(/*! ./logo.svg */ "./src/logo.svg");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logo_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__logo_svg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__App_css__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__App_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__boundlessgeo_sdk_components_map__ = __webpack_require__(/*! @boundlessgeo/sdk/components/map */ "./node_modules/@boundlessgeo/sdk/components/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__boundlessgeo_sdk_components_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__boundlessgeo_sdk_components_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_reducers_map__ = __webpack_require__(/*! @boundlessgeo/sdk/reducers/map */ "./node_modules/@boundlessgeo/sdk/reducers/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_reducers_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_reducers_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_actions_map__ = __webpack_require__(/*! @boundlessgeo/sdk/actions/map */ "./node_modules/@boundlessgeo/sdk/actions/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_actions_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_actions_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_css__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_redux__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux_thunk__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_redux_thunk__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_components_map__ = __webpack_require__(/*! @boundlessgeo/sdk/components/map */ "./node_modules/@boundlessgeo/sdk/components/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_components_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_components_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_reducers_map__ = __webpack_require__(/*! @boundlessgeo/sdk/reducers/map */ "./node_modules/@boundlessgeo/sdk/reducers/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_reducers_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_reducers_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__ = __webpack_require__(/*! @boundlessgeo/sdk/actions/map */ "./node_modules/@boundlessgeo/sdk/actions/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__bookmarks__ = __webpack_require__(/*! ./bookmarks */ "./src/bookmarks.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__reducer__ = __webpack_require__(/*! ./reducer */ "./src/reducer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__action__ = __webpack_require__(/*! ./action */ "./src/action.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__boundlessgeo_sdk_components_map_popup__ = __webpack_require__(/*! @boundlessgeo/sdk/components/map/popup */ "./node_modules/@boundlessgeo/sdk/components/map/popup.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__boundlessgeo_sdk_components_map_popup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__boundlessgeo_sdk_components_map_popup__);
 var _jsxFileName = '/Users/wnordmann/source/codewithacause/harvest-bundle/src/App.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -90874,9 +91074,83 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var store = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["c" /* createStore */])(Object(__WEBPACK_IMPORTED_MODULE_3_redux__["b" /* combineReducers */])({
-  'map': __WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_reducers_map___default.a
-}));
+
+
+
+
+
+
+
+
+
+var store = Object(__WEBPACK_IMPORTED_MODULE_2_redux__["d" /* createStore */])(Object(__WEBPACK_IMPORTED_MODULE_2_redux__["c" /* combineReducers */])({
+  map: __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_reducers_map___default.a, bookmark: __WEBPACK_IMPORTED_MODULE_9__reducer__["a" /* default */]
+}), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), Object(__WEBPACK_IMPORTED_MODULE_2_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_4_redux_thunk___default.a));
+
+var MarkFeaturesPopup = function (_SdkPopup) {
+  _inherits(MarkFeaturesPopup, _SdkPopup);
+
+  function MarkFeaturesPopup(props) {
+    _classCallCheck(this, MarkFeaturesPopup);
+
+    var _this = _possibleConstructorReturn(this, (MarkFeaturesPopup.__proto__ || Object.getPrototypeOf(MarkFeaturesPopup)).call(this, props));
+
+    _this.markFeatures = _this.markFeatures.bind(_this);
+    return _this;
+  }
+
+  _createClass(MarkFeaturesPopup, [{
+    key: 'markFeatures',
+    value: function markFeatures(evt) {
+      var feature_ids = [];
+      var features = this.props.features;
+
+      for (var i = 0, ii = features.length; i < ii; i++) {
+        // create an array of ids to be removed from the map.
+        feature_ids.push(features[i].properties.Title);
+        // set the feature property to "marked".
+        features[i].properties.isMarked = true;
+      }
+
+      // remove the old unmarked features
+      //store.dispatch(SdkMapActions.removeFeatures('points', ['in', 'id'].concat(feature_ids)));
+      // add the new freshly marked features.
+      //store.dispatch(SdkMapActions.addFeatures('points', features));
+      // close this popup.
+      this.close(evt);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var feature_ids = this.props.features.map(function (f) {
+        return f.properties.Title;
+      });
+
+      return this.renderPopup(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'sdk-popup-content', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54
+          },
+          __self: this
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 55
+            },
+            __self: this
+          },
+          feature_ids.join(', ')
+        )
+      ));
+    }
+  }]);
+
+  return MarkFeaturesPopup;
+}(__WEBPACK_IMPORTED_MODULE_11__boundlessgeo_sdk_components_map_popup___default.a);
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -90891,27 +91165,110 @@ var App = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       // add the OSM source
-      store.dispatch(__WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_actions_map__["addSource"]('osm', {
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["addSource"]('osm', {
         type: 'raster',
         tileSize: 256,
         tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', 'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png', 'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png']
       }));
 
       // add an OSM layer
-      store.dispatch(__WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_actions_map__["addLayer"]({
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["addLayer"]({
         id: 'osm',
         source: 'osm'
       }));
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["addSource"]('stories', {
+        type: 'geojson',
+        data: {
+          "type": "FeatureCollection",
+          "name": "Urban Harvest Existing Farms",
+          "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+          "features": [{ "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.540207679982643, 24.681778761020187] } }, { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.247858964457834, 24.647041610326482] } }, { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.420253914284515, 24.663183693273464] } }, { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.350039191291202, 24.85956606418393] } }, { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [90.939401757462207, 24.327018066009312] } }, { "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.540207679982643, 24.681778761020187] } }, { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.247858964457834, 24.647041610326482] } }, { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.420253914284515, 24.663183693273464] } }, { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.350039191291202, 24.85956606418393] } }, { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [90.939401757462207, 24.327018066009312] } }]
+        }
+      }));
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["addLayer"]({
+        id: 'stories',
+        type: 'circle',
+        source: 'stories',
+        paint: {
+          'circle-radius': 5,
+          'circle-color': '#f46b42',
+          'circle-stroke-color': '#3a160b'
+        }
+      }));
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_10__action__["a" /* changeSource */]('stories'));
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["setView"]([86.3, 24.683], 6));
     }
   }, {
     key: 'render',
     value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__boundlessgeo_sdk_components_map___default.a, { store: store, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
+      var _this3 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'App', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 117
+          },
+          __self: this
         },
-        __self: this
-      });
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_3_react_redux__["Provider"],
+          { store: store, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 118
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'mapContainer', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 119
+              },
+              __self: this
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_components_map___default.a, {
+              className: 'map',
+              includeFeaturesOnClick: true,
+              onClick: function onClick(map, xy, featurePromise) {
+                featurePromise.then(function (featureGroups) {
+                  // featureGroups is an array of objects. The key of each object
+                  // is a layer from the map. Here, only one layer is included.
+                  var layers = Object.keys(featureGroups[0]);
+                  var layer = layers[0];
+                  // collect every feature from the layer.
+                  // in this case, only one feature will be returned in the promise.
+                  var features = featureGroups[0][layer];
+
+                  if (features === undefined) {
+                    // no features, :( Let the user know nothing was there.
+                    //map.addPopup(<SdkPopup coordinate={xy}><i>This is a popup!</i></SdkPopup>);
+                  } else {
+                    // Show the super advanced fun popup!
+                    map.addPopup(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MarkFeaturesPopup, { coordinate: xy, features: features, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 138
+                      },
+                      __self: _this3
+                    }));
+                  }
+                });
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 120
+              },
+              __self: this
+            }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__bookmarks__["a" /* default */], { store: store, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 143
+              },
+              __self: this
+            })
+          )
+        )
+      );
     }
   }]);
 
@@ -90919,6 +91276,187 @@ var App = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (App);
+
+/***/ }),
+
+/***/ "./src/action.js":
+/*!***********************!*\
+  !*** ./src/action.js ***!
+  \***********************/
+/*! exports provided: moveSlide, changeSource, addBookmark */
+/*! exports used: changeSource, moveSlide */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = moveSlide;
+/* harmony export (immutable) */ __webpack_exports__["a"] = changeSource;
+/* unused harmony export addBookmark */
+// Action for moving
+function moveSlide(count) {
+  return {
+    type: 'MOVE',
+    count: count
+  };
+}
+function changeSource(source) {
+  return {
+    type: 'CHANGESOURCE',
+    source: source
+  };
+}
+function addBookmark(isAdding) {
+  return {
+    type: 'ADDBOOKMARK',
+    isAdding: isAdding
+  };
+}
+
+/***/ }),
+
+/***/ "./src/bookmarks.js":
+/*!**************************!*\
+  !*** ./src/bookmarks.js ***!
+  \**************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__moveButton__ = __webpack_require__(/*! ./moveButton */ "./src/moveButton.js");
+var _jsxFileName = '/Users/wnordmann/source/codewithacause/harvest-bundle/src/bookmarks.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+// Custom Bookmark Component
+
+var BookmarkComponent = function (_React$PureComponent) {
+  _inherits(BookmarkComponent, _React$PureComponent);
+
+  function BookmarkComponent() {
+    _classCallCheck(this, BookmarkComponent);
+
+    return _possibleConstructorReturn(this, (BookmarkComponent.__proto__ || Object.getPrototypeOf(BookmarkComponent)).apply(this, arguments));
+  }
+
+  _createClass(BookmarkComponent, [{
+    key: 'render',
+    value: function render() {
+      // Get the feature selected by the count in state
+      // Render the modal window using style from app.css
+      var count = this.props.bookmark.count;
+      if (this.props.map.sources[this.props.bookmark.source] && this.props.map.sources[this.props.bookmark.source].data.features) {
+        var feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'panelContainer', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 16
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'panel', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 17
+              },
+              __self: this
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'imageContainer WILLIETEST', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 18
+                },
+                __self: this
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'closeButton fa fa-close', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 19
+                },
+                __self: this
+              }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'title', __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 20
+                  },
+                  __self: this
+                },
+                feature.properties.Title
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'storyContainer', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 24
+                },
+                __self: this
+              },
+              feature.properties.Story
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'controls', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 27
+                },
+                __self: this
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__moveButton__["a" /* default */], { store: this.props.store, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 28
+                },
+                __self: this
+              })
+            )
+          )
+        );
+      } else {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 36
+            },
+            __self: this
+          },
+          ' '
+        );
+      }
+    }
+  }]);
+
+  return BookmarkComponent;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.PureComponent);
+// Getting the bookmark and map stores
+
+
+function mapStateToProps(state) {
+  return {
+    bookmark: state.bookmark,
+    map: state.map
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(mapStateToProps, null)(BookmarkComponent));
 
 /***/ }),
 
@@ -90975,13 +91513,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_css__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__index_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App__ = __webpack_require__(/*! ./App */ "./src/App.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registerServiceWorker__ = __webpack_require__(/*! ./registerServiceWorker */ "./src/registerServiceWorker.js");
 var _jsxFileName = '/Users/wnordmann/source/codewithacause/harvest-bundle/src/index.js';
 
 
 
 
-
+// import registerServiceWorker from './registerServiceWorker';
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__App__["a" /* default */], {
   __source: {
@@ -90989,131 +91526,192 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
     lineNumber: 7
   },
   __self: this
-}), document.getElementById('root'));
-Object(__WEBPACK_IMPORTED_MODULE_4__registerServiceWorker__["a" /* default */])();
+}), document.getElementById('maproot'));
+// registerServiceWorker();
 
 /***/ }),
 
-/***/ "./src/logo.svg":
-/*!**********************!*\
-  !*** ./src/logo.svg ***!
-  \**********************/
-/*! dynamic exports provided */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "static/media/logo.5d5d9eef.svg";
-
-/***/ }),
-
-/***/ "./src/registerServiceWorker.js":
-/*!**************************************!*\
-  !*** ./src/registerServiceWorker.js ***!
-  \**************************************/
-/*! exports provided: default, unregister */
+/***/ "./src/moveButton.js":
+/*!***************************!*\
+  !*** ./src/moveButton.js ***!
+  \***************************/
+/*! exports provided: default */
 /*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = register;
-/* unused harmony export unregister */
-// In production, we register a service worker to serve assets from local cache.
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__action__ = __webpack_require__(/*! ./action */ "./src/action.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__boundlessgeo_sdk_actions_map__ = __webpack_require__(/*! @boundlessgeo/sdk/actions/map */ "./node_modules/@boundlessgeo/sdk/actions/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__boundlessgeo_sdk_actions_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__boundlessgeo_sdk_actions_map__);
+var _jsxFileName = '/Users/wnordmann/source/codewithacause/harvest-bundle/src/moveButton.js';
 
-// This lets the app load faster on subsequent visits in production, and gives
-// it offline capabilities. However, it also means that developers (and users)
-// will only see deployed updates on the "N+1" visit to a page, since previously
-// cached resources are updated in the background.
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-// To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
-// This link also includes instructions on opting out of this behavior.
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var isLocalhost = Boolean(window.location.hostname === 'localhost' ||
-// [::1] is the IPv6 localhost address.
-window.location.hostname === '[::1]' ||
-// 127.0.0.1/8 is considered localhost for IPv4.
-window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function register() {
-  if (false) {
-    // The URL constructor is available in all browsers that support SW.
-    var publicUrl = new URL(process.env.PUBLIC_URL, window.location);
-    if (publicUrl.origin !== window.location.origin) {
-      // Our service worker won't work if PUBLIC_URL is on a different origin
-      // from what our page is served on. This might happen if a CDN is used to
-      // serve assets; see https://github.com/facebookincubator/create-react-app/issues/2374
-      return;
-    }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-    window.addEventListener('load', function () {
-      var swUrl = process.env.PUBLIC_URL + '/service-worker.js';
 
-      if (isLocalhost) {
-        // This is running on localhost. Lets check if a service worker still exists or not.
-        checkValidServiceWorker(swUrl);
 
-        // Add some additional logging to localhost, pointing developers to the
-        // service worker/PWA documentation.
-        navigator.serviceWorker.ready.then(function () {
-          console.log('This web app is being served cache-first by a service ' + 'worker. To learn more, visit https://goo.gl/SC7cgQ');
-        });
-      } else {
-        // Is not local host. Just register service worker
-        registerValidSW(swUrl);
-      }
-    });
+
+
+
+
+// Custom Bookmark Component
+
+var MoveButtonComponent = function (_React$PureComponent) {
+  _inherits(MoveButtonComponent, _React$PureComponent);
+
+  function MoveButtonComponent() {
+    _classCallCheck(this, MoveButtonComponent);
+
+    return _possibleConstructorReturn(this, (MoveButtonComponent.__proto__ || Object.getPrototypeOf(MoveButtonComponent)).apply(this, arguments));
   }
-}
 
-function registerValidSW(swUrl) {
-  navigator.serviceWorker.register(swUrl).then(function (registration) {
-    registration.onupdatefound = function () {
-      var installingWorker = registration.installing;
-      installingWorker.onstatechange = function () {
-        if (installingWorker.state === 'installed') {
-          if (navigator.serviceWorker.controller) {
-            // At this point, the old content will have been purged and
-            // the fresh content will have been added to the cache.
-            // It's the perfect time to display a "New content is
-            // available; please refresh." message in your web app.
-            console.log('New content is available; please refresh.');
-          } else {
-            // At this point, everything has been precached.
-            // It's the perfect time to display a
-            // "Content is cached for offline use." message.
-            console.log('Content is cached for offline use.');
-          }
-        }
-      };
-    };
-  }).catch(function (error) {
-    console.error('Error during service worker registration:', error);
-  });
-}
+  _createClass(MoveButtonComponent, [{
+    key: 'moveBookmark',
 
-function checkValidServiceWorker(swUrl) {
-  // Check if the service worker can be found. If it can't reload the page.
-  fetch(swUrl).then(function (response) {
-    // Ensure service worker exists, and that we really are getting a JS file.
-    if (response.status === 404 || response.headers.get('content-type').indexOf('javascript') === -1) {
-      // No service worker found. Probably a different app. Reload the page.
-      navigator.serviceWorker.ready.then(function (registration) {
-        registration.unregister().then(function () {
-          window.location.reload();
-        });
-      });
-    } else {
-      // Service worker found. Proceed as normal.
-      registerValidSW(swUrl);
+    // This is the where action really happens, update state and move the map
+    value: function moveBookmark(count) {
+      this.props.moveSlide(count);
+      if (this.props.map.sources[this.props.bookmark.source]) {
+        var feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
+
+        // Simpple hack to adjust center of the map to compensate for the image
+        var adjustGeo = [feature.geometry.coordinates[0] - 0.0005, feature.geometry.coordinates[1]];
+        this.props.zoomTo(adjustGeo, 18);
+      }
     }
-  }).catch(function () {
-    console.log('No internet connection found. App is running in offline mode.');
-  });
-}
+    // Logic for handling next button
 
-function unregister() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(function (registration) {
-      registration.unregister();
-    });
+  }, {
+    key: 'nextBookmark',
+    value: function nextBookmark() {
+      var featureCount = this.props.map.sources[this.props.bookmark.source].data.features.length;
+      var currentCount = this.props.bookmark.count;
+      var newCount = currentCount >= featureCount - 1 ? 0 : currentCount + 1;
+      this.moveBookmark(newCount);
+    }
+    // Logic for handling previous button
+
+  }, {
+    key: 'previousBookmark',
+    value: function previousBookmark() {
+      var featureCount = this.props.map.sources[this.props.bookmark.source].data.features.length;
+      var currentCount = this.props.bookmark.count;
+      var newCount = currentCount <= 0 ? featureCount - 1 : currentCount - 1;
+      this.moveBookmark(newCount);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(nextProps, nextState) {
+      if (nextProps.bookmark.source !== this.props.bookmark.source) {
+        this.moveBookmark(this.props.bookmark.count);
+      }
+    }
+    // Render the buttons
+
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'span',
+        { className: 'buttons', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43
+          },
+          __self: this
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { className: 'sdk-btn', onClick: function onClick() {
+              _this2.previousBookmark();
+            }, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 44
+            },
+            __self: this
+          },
+          'Previous'
+        ),
+        ' ',
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { className: 'sdk-btn', onClick: function onClick() {
+              _this2.nextBookmark();
+            }, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 46
+            },
+            __self: this
+          },
+          'Next'
+        )
+      );
+    }
+  }]);
+
+  return MoveButtonComponent;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.PureComponent);
+// Getting the bookmark and map stores
+
+
+function mapStateToProps(state) {
+  return {
+    bookmark: state.bookmark,
+    map: state.map
+  };
+}
+// Need the moveSlide function from bookmark reducer
+// Need setView function from map reducer
+function mapDispatchToProps(dispatch) {
+  return {
+    moveSlide: function moveSlide(count) {
+      dispatch(__WEBPACK_IMPORTED_MODULE_2__action__["b" /* moveSlide */](count));
+    },
+    zoomTo: function zoomTo(coords, zoomLevel) {
+      dispatch(__WEBPACK_IMPORTED_MODULE_3__boundlessgeo_sdk_actions_map__["setView"](coords, zoomLevel));
+    }
+  };
+}
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(MoveButtonComponent));
+
+/***/ }),
+
+/***/ "./src/reducer.js":
+/*!************************!*\
+  !*** ./src/reducer.js ***!
+  \************************/
+/*! exports provided: default */
+/*! exports used: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = bookmarkReducer;
+var defaultState = {
+  count: 0
+};
+
+function bookmarkReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case 'MOVE':
+      return Object.assign({}, state, { count: action.count });
+    case 'CHANGESOURCE':
+      return { source: action.source, count: 0 };
+    case 'ADDBOOKMARK':
+      return Object.assign({}, state, { isAdding: action.isAdding });
+    default:
+      return state;
   }
 }
 

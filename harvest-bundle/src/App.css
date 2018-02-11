@@ -1,3 +1,52 @@
+.mapContainer {
+  position: relative; }
+  .mapContainer .map {
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #cdcdcd;
+    margin: 3em; }
+
+.mapContainer .panelContainer {
+  position: absolute;
+  background-color: #ffffff;
+  top: 30px;
+  left: 85px;
+  border-radius: 4px;
+  border: 1px solid #cdcdcd;
+  filter: drop-shadow(0px 10px 5px #757575);
+  height: 586px;
+  width: 32%; }
+  .mapContainer .panelContainer .panel .imageContainer {
+    color: #ffffff;
+    background-color: #cccccc;
+    height: 250px;
+    position: relative; }
+    .mapContainer .panelContainer .panel .imageContainer .closeButton {
+      text-align: right;
+      width: 100%;
+      padding-top: 10px;
+      padding-right: 14px; }
+    .mapContainer .panelContainer .panel .imageContainer .title {
+      position: absolute;
+      bottom: 16px;
+      left: 33px;
+      font-size: 24px;
+      font-family: Futura,Trebuchet MS,Arial,sans-serif;
+      font-style: normal;
+      font-variant: normal; }
+  .mapContainer .panelContainer .storyContainer {
+    padding: 33px;
+    height: 80%; }
+  .mapContainer .panelContainer .controls {
+    position: absolute;
+    bottom: 23px;
+    text-align: right;
+    width: 100%;
+    padding-right: 33px; }
+
+* {
+  box-sizing: border-box; }
+
 /*
  * Include the SDK stylesheet
  */
@@ -13,26 +62,30 @@
   padding: 18px 15px 15px;
   border-radius: 10px;
   border: 1px solid #cccccc; }
-  .sdk-mapbox-gl-popup:after, .sdk-mapbox-gl-popup:before {
-    top: 100%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute; }
-  .sdk-mapbox-gl-popup:after {
-    border-top-color: white;
-    border-width: 10px;
-    left: 48px;
-    margin-left: -10px; }
-  .sdk-mapbox-gl-popup:before {
-    border-top-color: #cccccc;
-    border-width: 11px;
-    left: 48px;
-    margin-left: -11px; }
-  .sdk-mapbox-gl-popup #sdk-popup-container {
-    max-height: 240px;
-    overflow: auto; }
+
+.sdk-mapbox-gl-popup:after, .sdk-mapbox-gl-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute; }
+
+.sdk-mapbox-gl-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px; }
+
+.sdk-mapbox-gl-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px; }
+
+.sdk-mapbox-gl-popup #sdk-popup-container {
+  max-height: 240px;
+  overflow: auto; }
 
 .sdk-popup {
   font-size: 14px;
@@ -45,26 +98,30 @@
   border: 1px solid #cccccc;
   bottom: 12px;
   left: -50px; }
-  .sdk-popup:after, .sdk-popup:before {
-    top: 100%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute; }
-  .sdk-popup:after {
-    border-top-color: white;
-    border-width: 10px;
-    left: 48px;
-    margin-left: -10px; }
-  .sdk-popup:before {
-    border-top-color: #cccccc;
-    border-width: 11px;
-    left: 48px;
-    margin-left: -11px; }
-  .sdk-popup #sdk-popup-container {
-    max-height: 240px;
-    overflow: auto; }
+
+.sdk-popup:after, .sdk-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute; }
+
+.sdk-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px; }
+
+.sdk-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px; }
+
+.sdk-popup #sdk-popup-container {
+  max-height: 240px;
+  overflow: auto; }
 
 .sdk-popup-closer {
   text-decoration: none;
@@ -82,68 +139,78 @@
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg); }
-  .controls .sdk-slider-control input[type=range] {
-    background-color: transparent;
-    -webkit-appearance: none;
-    width: 201px; }
-    .controls .sdk-slider-control input[type=range]:focus {
-      outline: 0; }
-    .controls .sdk-slider-control input[type=range]::-webkit-slider-runnable-track {
-      cursor: pointer;
-      height: 24px;
-      transition: all .2s ease;
-      width: 201px;
-      background: #ededed;
-      border: 1px solid #b4b4b4;
-      border-radius: 4px; }
-    .controls .sdk-slider-control input[type=range]::-webkit-slider-thumb {
-      background: #29728d;
-      border: 1px solid #ffffff;
-      border-radius: 4px;
-      cursor: pointer;
-      height: 22px;
-      width: 14px;
-      -webkit-appearance: none; }
-    .controls .sdk-slider-control input[type=range]::-moz-range-track {
-      cursor: pointer;
-      height: 24px;
-      transition: all .2s ease;
-      width: 201px;
-      background: #ededed;
-      border: 1px solid #b4b4b4;
-      border-radius: 4px; }
-    .controls .sdk-slider-control input[type=range]::-moz-range-thumb {
-      background: #29728d;
-      border: 1px solid #ffffff;
-      border-radius: 4px;
-      cursor: pointer;
-      height: 22px;
-      width: 14px; }
-    .controls .sdk-slider-control input[type=range]::-ms-track {
-      cursor: pointer;
-      height: 24px;
-      transition: all .2s ease;
-      width: 201px;
-      background: transparent;
-      border-color: transparent;
-      border-width: 11px 0;
-      color: transparent; }
-    .controls .sdk-slider-control input[type=range]::-ms-fill-lower {
-      background: #e0e0e0;
-      border: 1px solid #b4b4b4;
-      border-radius: 8px; }
-    .controls .sdk-slider-control input[type=range]::-ms-fill-upper {
-      background: #ededed;
-      border: 1px solid #b4b4b4;
-      border-radius: 8px; }
-    .controls .sdk-slider-control input[type=range]::-ms-thumb {
-      background: #29728d;
-      border: 1px solid #ffffff;
-      border-radius: 4px;
-      cursor: pointer;
-      height: 22px;
-      width: 14px;
-      margin-top: 0; }
+
+.controls .sdk-slider-control input[type=range] {
+  background-color: transparent;
+  -webkit-appearance: none;
+  width: 201px; }
+
+.controls .sdk-slider-control input[type=range]:focus {
+  outline: 0; }
+
+.controls .sdk-slider-control input[type=range]::-webkit-slider-runnable-track {
+  cursor: pointer;
+  height: 24px;
+  transition: all .2s ease;
+  width: 201px;
+  background: #ededed;
+  border: 1px solid #b4b4b4;
+  border-radius: 4px; }
+
+.controls .sdk-slider-control input[type=range]::-webkit-slider-thumb {
+  background: #29728d;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 22px;
+  width: 14px;
+  -webkit-appearance: none; }
+
+.controls .sdk-slider-control input[type=range]::-moz-range-track {
+  cursor: pointer;
+  height: 24px;
+  transition: all .2s ease;
+  width: 201px;
+  background: #ededed;
+  border: 1px solid #b4b4b4;
+  border-radius: 4px; }
+
+.controls .sdk-slider-control input[type=range]::-moz-range-thumb {
+  background: #29728d;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 22px;
+  width: 14px; }
+
+.controls .sdk-slider-control input[type=range]::-ms-track {
+  cursor: pointer;
+  height: 24px;
+  transition: all .2s ease;
+  width: 201px;
+  background: transparent;
+  border-color: transparent;
+  border-width: 11px 0;
+  color: transparent; }
+
+.controls .sdk-slider-control input[type=range]::-ms-fill-lower {
+  background: #e0e0e0;
+  border: 1px solid #b4b4b4;
+  border-radius: 8px; }
+
+.controls .sdk-slider-control input[type=range]::-ms-fill-upper {
+  background: #ededed;
+  border: 1px solid #b4b4b4;
+  border-radius: 8px; }
+
+.controls .sdk-slider-control input[type=range]::-ms-thumb {
+  background: #29728d;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 22px;
+  width: 14px;
+  margin-top: 0; }
 
 @-moz-document url-prefix() {
   .controls .sdk-slider-control {
@@ -156,24 +223,29 @@
   top: 20px;
   left: 12px;
   background-color: #e0e0e0; }
-  .sdk-zoom-control button {
-    border-radius: 4px 4px 0 0;
-    background-color: #f1f1f1;
-    font-size: 1.14em;
-    font-weight: bold;
-    display: block;
-    width: 1.55em;
-    height: 1.55em;
-    border: 1px solid #b4b4b4; }
-    .sdk-zoom-control button:focus {
-      outline: 0; }
-    .sdk-zoom-control button:hover {
-      background-color: rgba(0, 0, 0, 0.05); }
-  .sdk-zoom-control button.sdk-zoom-in {
-    border-bottom: none; }
-  .sdk-zoom-control button.sdk-zoom-out {
-    border-radius: 0 0 4px 4px;
-    border-top: 1px solid #b4b4b4; }
+
+.sdk-zoom-control button {
+  border-radius: 4px 4px 0 0;
+  background-color: #f1f1f1;
+  font-size: 1.14em;
+  font-weight: bold;
+  display: block;
+  width: 1.55em;
+  height: 1.55em;
+  border: 1px solid #b4b4b4; }
+
+.sdk-zoom-control button:focus {
+  outline: 0; }
+
+.sdk-zoom-control button:hover {
+  background-color: rgba(0, 0, 0, 0.05); }
+
+.sdk-zoom-control button.sdk-zoom-in {
+  border-bottom: none; }
+
+.sdk-zoom-control button.sdk-zoom-out {
+  border-radius: 0 0 4px 4px;
+  border-top: 1px solid #b4b4b4; }
 
 .sdk-scale-line {
   z-index: 1;
