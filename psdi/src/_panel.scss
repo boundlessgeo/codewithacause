@@ -6,6 +6,7 @@
     border-radius: 4px;
     border: 1px solid #cdcdcd;
     margin: 3em;
+    height: 650px;
   }
 }
 .mapContainer .panelContainer {
@@ -16,8 +17,9 @@
   border-radius: 4px;
   border: 1px solid #cdcdcd;
   filter: drop-shadow(0px 10px 5px #757575);
-  height: 586px;
+  height: 486px;
   width: 32%;
+  max-width: 515px;
   .panel .imageContainer {
     color: #ffffff;
     background-image: url("assets/story-01-bg.png");
@@ -42,9 +44,11 @@
   }
   .storyContainer {
     font-family: europa,Trebuchet MS,Arial,sans-serif;
+    color: #333333;
     font-size: 16px;
     padding: 33px;
     height: 80%;
+    margin-bottom: 40px;
   }
   .controls {
     position: absolute;
@@ -57,6 +61,9 @@
       border: none;
       text-transform: uppercase;
       font-family: europa,Trebuchet MS,Arial,sans-serif;
+      i {
+        font-size: 20px;
+      }
     }
   }
 }
