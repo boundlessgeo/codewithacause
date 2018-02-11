@@ -11,7 +11,10 @@ class MoveButtonComponent extends React.PureComponent {
     this.props.moveSlide(count);
     if (this.props.map.sources[this.props.bookmark.source]) {
       const feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
-      this.props.zoomTo(feature.geometry.coordinates, 18);
+
+      // Simpple hack to adjust center of the map to compensate for the image
+      const adjustGeo = [feature.geometry.coordinates[0] - 0.0005, feature.geometry.coordinates[1]];
+      this.props.zoomTo(adjustGeo, 18);
     }
 
   }
