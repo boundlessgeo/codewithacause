@@ -8,7 +8,6 @@
     margin: 3em;
   }
 }
-
 .mapContainer .panelContainer {
   position: absolute;
   background-color: #ffffff;
@@ -36,12 +35,14 @@
       bottom: 16px;
       left: 33px;
       font-size: 24px;
-      font-family: Futura,Trebuchet MS,Arial,sans-serif;
+      font-family: futura-pt,Trebuchet MS,Arial,sans-serif;
       font-style: normal;
     	font-variant: normal;
     }
   }
   .storyContainer {
+    font-family: europa,Trebuchet MS,Arial,sans-serif;
+    font-size: 16px;
     padding: 33px;
     height: 80%;
   }
@@ -51,5 +52,11 @@
     text-align: right;
     width: 100%;
     padding-right: 33px;
+    button {
+      font-size: 16px;
+      border: none;
+      text-transform: uppercase;
+      font-family: europa,Trebuchet MS,Arial,sans-serif;
+    }
   }
 }

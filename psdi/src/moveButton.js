@@ -38,9 +38,9 @@ class MoveButtonComponent extends React.PureComponent {
   render() {
     return (
       <span className="buttons">
-        <button className="sdk-btn" onClick={() => {
+        <button className="" onClick={() => {
           this.previousBookmark();
-        }}  >Previous</button> <button className="sdk-btn" onClick={() => {
+        }}  >Previous</button> <button className="" onClick={() => {
           this.nextBookmark();
         }}>Next</button>
       </span>

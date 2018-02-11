@@ -17,7 +17,7 @@ class BookmarkComponent extends React.PureComponent {
         <div className='panelContainer'>
           <div className="panel">
             <div className="imageContainer">
-              <div className="closeButton fa fa-close"></div>
+              <div className="closeButton"><i className="fa fa-close"></i></div>
               <div className="title">
                 {feature.properties.Title}
               </div>
