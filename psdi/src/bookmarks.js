@@ -25,7 +25,7 @@ class BookmarkComponent extends React.PureComponent {
             <div className="storyContainer">
               {feature.properties.Story}
             </div>
-            <div>
+            <div className="controls">
               <MoveButtonComponent store={this.props.store} />
             </div>
           </div>
