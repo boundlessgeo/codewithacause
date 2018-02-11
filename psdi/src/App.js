@@ -69,7 +69,8 @@ class App extends Component {
 
   componentDidMount() {
     // load in the map style from a external .json
-    store.dispatch(SdkMapActions.setView([90.37,23.94], 6));
+    //store.dispatch(SdkMapActions.setView([90.37,23.94], 6));
+    store.dispatch(SdkMapActions.setView([86.3, 24.683], 6));
     // add the OSM source
     store.dispatch(SdkMapActions.addSource('osm', {
       type: 'raster',
@@ -115,7 +116,8 @@ class App extends Component {
 
     addDataFromGeoJSON('map_data/Map_pins.geojson');
     store.dispatch(bookmarkAction.changeSource('stories'));
-    store.dispatch(bookmarkAction.addBookmark(true));
+    //store.dispatch(SdkMapActions.setView([86.3, 24.683], 6));
+    //store.dispatch(bookmarkAction.addBookmark(true));
 
   }
 
