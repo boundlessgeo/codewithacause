@@ -14,58 +14,15 @@ import SdkMapReducer from '@boundlessgeo/sdk/reducers/map';
 import * as SdkMapActions from '@boundlessgeo/sdk/actions/map';
 
 import BookmarkComponent from './bookmarks';
-import MoveButtonComponent from './moveButton';
+import MarkFeaturesPopup from './popup';
 
 import bookmarkReducer from './reducer';
 import * as bookmarkAction from './action';
-
-import SdkPopup from '@boundlessgeo/sdk/components/map/popup';
 
 const store = createStore(combineReducers({
   map: SdkMapReducer, bookmark: bookmarkReducer,
 }), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 applyMiddleware(thunkMiddleware));
-
-class MarkFeaturesPopup extends SdkPopup {
-
-  constructor(props) {
-    super(props);
-    this.markFeatures = this.markFeatures.bind(this);
-  }
-
-  markFeatures(evt) {
-    const feature_ids = [];
-    const features = this.props.features;
-
-    for (let i = 0, ii = features.length; i < ii; i++) {
-      // create an array of ids to be removed from the map.
-      feature_ids.push(features[i].properties.Title);
-      // set the feature property to "marked".
-      features[i].properties.isMarked = true;
-    }
-
-    // remove the old unmarked features
-    //store.dispatch(SdkMapActions.removeFeatures('points', ['in', 'id'].concat(feature_ids)));
-    // add the new freshly marked features.
-    //store.dispatch(SdkMapActions.addFeatures('points', features));
-    // close this popup.
-    this.close(evt);
-  }
-
-  render() {
-    //console.log(this.props.features[0].properties.pkuid)
-    //console.log(store.getState().bookmark.id)
-    const feature_ids = this.props.features.map(f => f.properties.Title);
-
-    return this.renderPopup((
-      <div className="sdk-popup-content">
-        <p>
-          { feature_ids.join(', ') }
-        </p>
-      </div>
-    ));
-  }
-}
 
 class App extends Component {
 
