@@ -15,13 +15,12 @@ class BookmarkComponent extends React.PureComponent {
       this.props.map.sources[this.props.bookmark.source].data.features) {
       const feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
       const image = {backgroundImage: `url("${feature.properties.Link_Image}")`, color:"#00000" };
-      console.log(image);
 
       return (
         <div className='panelContainer'>
           <div className="panel">
             <div className="imageContainer" style={image}>
-              <div className="closeButton"><i className="fa fa-close"></i></div>
+              <div className="closeButton"></div>
               <div className="title">
                 {feature.properties.Title}
               </div>
