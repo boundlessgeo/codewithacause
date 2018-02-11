@@ -116,6 +116,8 @@ class App extends Component {
       }
     }));
     store.dispatch(bookmarkAction.changeSource('stories'));
+    store.dispatch(SdkMapActions.setView([86.3, 24.683], 6));
+
   }
 
   render() {
