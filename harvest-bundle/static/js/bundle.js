@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b728ea2e69e7b112ab85"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2f6a107830f0ad22f746"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -6301,20 +6301,20 @@ exports.push([module.i, ".ol-box {\n  -webkit-box-sizing: border-box;\n         
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/App.css":
-/*!***********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader?{"importLoaders":1}!./node_modules/postcss-loader/lib?{"ident":"postcss","plugins":[null,null]}!./src/App.css ***!
-  \***********************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/s/App.css":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader?{"importLoaders":1}!./node_modules/postcss-loader/lib?{"ident":"postcss","plugins":[null,null]}!./src/s/App.css ***!
+  \*************************************************************************************************************************************************/
 /*! dynamic exports provided */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(undefined);
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(undefined);
 // imports
 
 
 // module
-exports.push([module.i, ".mapContainer {\n  position: relative; }\n  .mapContainer .map {\n    background-color: #ffffff;\n    border-radius: 4px;\n    border: 1px solid #cdcdcd;\n    margin: 3em; }\n\n.mapContainer .panelContainer {\n  position: absolute;\n  background-color: #ffffff;\n  top: 30px;\n  left: 85px;\n  border-radius: 4px;\n  border: 1px solid #cdcdcd;\n  -webkit-filter: drop-shadow(0px 10px 5px #757575);\n          filter: drop-shadow(0px 10px 5px #757575);\n  height: 586px;\n  width: 32%; }\n  .mapContainer .panelContainer .panel .imageContainer {\n    color: #ffffff;\n    background-image: url(\"https://lh3.googleusercontent.com/vTeisCIKR0kPadLu_u2_qn4TrBKjeyMgr-l6ebZO8C1XYPOvAvyJVOjCbL96UyB3yt48SUF215pZdrT7y-s0AK9L_0NjiUjIjrzpMkP6pxXB-IEjFddGLpFBwjTa1WeI0-nJpQ\");\n    background-color: #cccccc;\n    height: 250px;\n    position: relative; }\n    .mapContainer .panelContainer .panel .imageContainer .closeButton {\n      text-align: right;\n      width: 100%;\n      padding-top: 10px;\n      padding-right: 14px; }\n    .mapContainer .panelContainer .panel .imageContainer .title {\n      position: absolute;\n      bottom: 16px;\n      left: 33px;\n      font-size: 24px;\n      font-family: Futura,Trebuchet MS,Arial,sans-serif;\n      font-style: normal;\n      font-variant: normal; }\n  .mapContainer .panelContainer .storyContainer {\n    padding: 33px;\n    height: 80%; }\n  .mapContainer .panelContainer .controls {\n    position: absolute;\n    bottom: 23px;\n    text-align: right;\n    width: 100%;\n    padding-right: 33px; }\n\n* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\n/*\n * Include the SDK stylesheet\n */\n.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-nav-compass {\n  cursor: default; }\n\n.sdk-mapbox-gl-popup {\n  font-size: 14px;\n  position: absolute;\n  background-color: white;\n  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  padding: 18px 15px 15px;\n  border-radius: 10px;\n  border: 1px solid #cccccc; }\n\n.sdk-mapbox-gl-popup:after, .sdk-mapbox-gl-popup:before {\n  top: 100%;\n  border: solid transparent;\n  content: \" \";\n  height: 0;\n  width: 0;\n  position: absolute; }\n\n.sdk-mapbox-gl-popup:after {\n  border-top-color: white;\n  border-width: 10px;\n  left: 48px;\n  margin-left: -10px; }\n\n.sdk-mapbox-gl-popup:before {\n  border-top-color: #cccccc;\n  border-width: 11px;\n  left: 48px;\n  margin-left: -11px; }\n\n.sdk-mapbox-gl-popup #sdk-popup-container {\n  max-height: 240px;\n  overflow: auto; }\n\n.sdk-popup {\n  font-size: 14px;\n  position: absolute;\n  background-color: white;\n  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  padding: 18px 15px 15px;\n  border-radius: 10px;\n  border: 1px solid #cccccc;\n  bottom: 12px;\n  left: -50px; }\n\n.sdk-popup:after, .sdk-popup:before {\n  top: 100%;\n  border: solid transparent;\n  content: \" \";\n  height: 0;\n  width: 0;\n  position: absolute; }\n\n.sdk-popup:after {\n  border-top-color: white;\n  border-width: 10px;\n  left: 48px;\n  margin-left: -10px; }\n\n.sdk-popup:before {\n  border-top-color: #cccccc;\n  border-width: 11px;\n  left: 48px;\n  margin-left: -11px; }\n\n.sdk-popup #sdk-popup-container {\n  max-height: 240px;\n  overflow: auto; }\n\n.sdk-popup-closer {\n  text-decoration: none;\n  position: absolute;\n  top: 7px;\n  right: 8px;\n  cursor: pointer; }\n\n.controls .sdk-slider-control {\n  z-index: 1;\n  position: absolute;\n  top: 160px;\n  left: -75px;\n  -webkit-transform: rotate(-90deg);\n  -ms-transform: rotate(-90deg);\n  transform: rotate(-90deg); }\n\n.controls .sdk-slider-control input[type=range] {\n  background-color: transparent;\n  -webkit-appearance: none;\n  width: 201px; }\n\n.controls .sdk-slider-control input[type=range]:focus {\n  outline: 0; }\n\n.controls .sdk-slider-control input[type=range]::-webkit-slider-runnable-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px; }\n\n.controls .sdk-slider-control input[type=range]::-webkit-slider-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px;\n  -webkit-appearance: none; }\n\n.controls .sdk-slider-control input[type=range]::-moz-range-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px; }\n\n.controls .sdk-slider-control input[type=range]::-moz-range-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: transparent;\n  border-color: transparent;\n  border-width: 11px 0;\n  color: transparent; }\n\n.controls .sdk-slider-control input[type=range]::-ms-fill-lower {\n  background: #e0e0e0;\n  border: 1px solid #b4b4b4;\n  border-radius: 8px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-fill-upper {\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 8px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px;\n  margin-top: 0; }\n\n@-moz-document url-prefix() {\n  .controls .sdk-slider-control {\n    top: calc(160px + 4px); } }\n\n.sdk-zoom-control {\n  z-index: 1;\n  border-radius: 4px;\n  position: absolute;\n  top: 20px;\n  left: 12px;\n  background-color: #e0e0e0; }\n\n.sdk-zoom-control button {\n  border-radius: 4px 4px 0 0;\n  background-color: #f1f1f1;\n  font-size: 1.14em;\n  font-weight: bold;\n  display: block;\n  width: 1.55em;\n  height: 1.55em;\n  border: 1px solid #b4b4b4; }\n\n.sdk-zoom-control button:focus {\n  outline: 0; }\n\n.sdk-zoom-control button:hover {\n  background-color: rgba(0, 0, 0, 0.05); }\n\n.sdk-zoom-control button.sdk-zoom-in {\n  border-bottom: none; }\n\n.sdk-zoom-control button.sdk-zoom-out {\n  border-radius: 0 0 4px 4px;\n  border-top: 1px solid #b4b4b4; }\n\n.sdk-scale-line {\n  z-index: 1;\n  background: #29728d;\n  border-radius: 4px;\n  bottom: .5em;\n  left: .5em;\n  padding: 2px;\n  position: absolute; }\n\n.sdk-scale-line-inner {\n  border: 1px solid #ededed;\n  border-top: none;\n  color: #ededed;\n  font-size: 10px;\n  text-align: center;\n  margin: 1px;\n  will-change: contents, width; }\n\n/** SDK button. */\nbutton.sdk-btn {\n  background-color: #f58d50;\n  color: #fff;\n  display: inline-block;\n  font-weight: 400;\n  line-height: 1.25;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  border: 1px solid transparent;\n  padding: .5rem 1rem;\n  font-size: 1rem;\n  border-radius: .25rem; }\n\nli.sdk-layer {\n  list-style: none; }\n\n.sdk-map {\n  position: relative; }\n\n.sdk-map .controls {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%; }\n\n.App {\n  text-align: center; }\n\n.App-logo {\n  -webkit-animation: App-logo-spin infinite 20s linear;\n          animation: App-logo-spin infinite 20s linear;\n  height: 80px; }\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white; }\n\n.App-title {\n  font-size: 1.5em; }\n\n.App-intro {\n  font-size: large; }\n\n@-webkit-keyframes App-logo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes App-logo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n", ""]);
+exports.push([module.i, ".mapContainer {\n  position: relative; }\n  .mapContainer .map {\n    background-color: #ffffff;\n    border-radius: 4px;\n    border: 1px solid #cdcdcd;\n    margin: 3em; }\n\n.mapContainer .panelContainer {\n  position: absolute;\n  background-color: #ffffff;\n  top: 30px;\n  left: 85px;\n  border-radius: 4px;\n  border: 1px solid #cdcdcd;\n  -webkit-filter: drop-shadow(0px 10px 5px #757575);\n          filter: drop-shadow(0px 10px 5px #757575);\n  height: 586px;\n  width: 32%; }\n  .mapContainer .panelContainer .panel .imageContainer {\n    color: #ffffff;\n    background-color: #cccccc;\n    height: 250px;\n    position: relative; }\n    .mapContainer .panelContainer .panel .imageContainer .closeButton {\n      text-align: right;\n      width: 100%;\n      padding-top: 10px;\n      padding-right: 14px; }\n    .mapContainer .panelContainer .panel .imageContainer .title {\n      position: absolute;\n      bottom: 16px;\n      left: 33px;\n      font-size: 24px;\n      font-family: Futura,Trebuchet MS,Arial,sans-serif;\n      font-style: normal;\n      font-variant: normal; }\n  .mapContainer .panelContainer .storyContainer {\n    padding: 33px;\n    height: 80%; }\n  .mapContainer .panelContainer .controls {\n    position: absolute;\n    bottom: 23px;\n    text-align: right;\n    width: 100%;\n    padding-right: 33px; }\n\n* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n\n/*\n * Include the SDK stylesheet\n */\n.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-nav-compass {\n  cursor: default; }\n\n.sdk-mapbox-gl-popup {\n  font-size: 14px;\n  position: absolute;\n  background-color: white;\n  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  padding: 18px 15px 15px;\n  border-radius: 10px;\n  border: 1px solid #cccccc; }\n\n.sdk-mapbox-gl-popup:after, .sdk-mapbox-gl-popup:before {\n  top: 100%;\n  border: solid transparent;\n  content: \" \";\n  height: 0;\n  width: 0;\n  position: absolute; }\n\n.sdk-mapbox-gl-popup:after {\n  border-top-color: white;\n  border-width: 10px;\n  left: 48px;\n  margin-left: -10px; }\n\n.sdk-mapbox-gl-popup:before {\n  border-top-color: #cccccc;\n  border-width: 11px;\n  left: 48px;\n  margin-left: -11px; }\n\n.sdk-mapbox-gl-popup #sdk-popup-container {\n  max-height: 240px;\n  overflow: auto; }\n\n.sdk-popup {\n  font-size: 14px;\n  position: absolute;\n  background-color: white;\n  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));\n  padding: 18px 15px 15px;\n  border-radius: 10px;\n  border: 1px solid #cccccc;\n  bottom: 12px;\n  left: -50px; }\n\n.sdk-popup:after, .sdk-popup:before {\n  top: 100%;\n  border: solid transparent;\n  content: \" \";\n  height: 0;\n  width: 0;\n  position: absolute; }\n\n.sdk-popup:after {\n  border-top-color: white;\n  border-width: 10px;\n  left: 48px;\n  margin-left: -10px; }\n\n.sdk-popup:before {\n  border-top-color: #cccccc;\n  border-width: 11px;\n  left: 48px;\n  margin-left: -11px; }\n\n.sdk-popup #sdk-popup-container {\n  max-height: 240px;\n  overflow: auto; }\n\n.sdk-popup-closer {\n  text-decoration: none;\n  position: absolute;\n  top: 7px;\n  right: 8px;\n  cursor: pointer; }\n\n.controls .sdk-slider-control {\n  z-index: 1;\n  position: absolute;\n  top: 160px;\n  left: -75px;\n  -webkit-transform: rotate(-90deg);\n  -ms-transform: rotate(-90deg);\n  transform: rotate(-90deg); }\n\n.controls .sdk-slider-control input[type=range] {\n  background-color: transparent;\n  -webkit-appearance: none;\n  width: 201px; }\n\n.controls .sdk-slider-control input[type=range]:focus {\n  outline: 0; }\n\n.controls .sdk-slider-control input[type=range]::-webkit-slider-runnable-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px; }\n\n.controls .sdk-slider-control input[type=range]::-webkit-slider-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px;\n  -webkit-appearance: none; }\n\n.controls .sdk-slider-control input[type=range]::-moz-range-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 4px; }\n\n.controls .sdk-slider-control input[type=range]::-moz-range-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-track {\n  cursor: pointer;\n  height: 24px;\n  -webkit-transition: all .2s ease;\n  -o-transition: all .2s ease;\n  transition: all .2s ease;\n  width: 201px;\n  background: transparent;\n  border-color: transparent;\n  border-width: 11px 0;\n  color: transparent; }\n\n.controls .sdk-slider-control input[type=range]::-ms-fill-lower {\n  background: #e0e0e0;\n  border: 1px solid #b4b4b4;\n  border-radius: 8px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-fill-upper {\n  background: #ededed;\n  border: 1px solid #b4b4b4;\n  border-radius: 8px; }\n\n.controls .sdk-slider-control input[type=range]::-ms-thumb {\n  background: #29728d;\n  border: 1px solid #ffffff;\n  border-radius: 4px;\n  cursor: pointer;\n  height: 22px;\n  width: 14px;\n  margin-top: 0; }\n\n@-moz-document url-prefix() {\n  .controls .sdk-slider-control {\n    top: calc(160px + 4px); } }\n\n.sdk-zoom-control {\n  z-index: 1;\n  border-radius: 4px;\n  position: absolute;\n  top: 20px;\n  left: 12px;\n  background-color: #e0e0e0; }\n\n.sdk-zoom-control button {\n  border-radius: 4px 4px 0 0;\n  background-color: #f1f1f1;\n  font-size: 1.14em;\n  font-weight: bold;\n  display: block;\n  width: 1.55em;\n  height: 1.55em;\n  border: 1px solid #b4b4b4; }\n\n.sdk-zoom-control button:focus {\n  outline: 0; }\n\n.sdk-zoom-control button:hover {\n  background-color: rgba(0, 0, 0, 0.05); }\n\n.sdk-zoom-control button.sdk-zoom-in {\n  border-bottom: none; }\n\n.sdk-zoom-control button.sdk-zoom-out {\n  border-radius: 0 0 4px 4px;\n  border-top: 1px solid #b4b4b4; }\n\n.sdk-scale-line {\n  z-index: 1;\n  background: #29728d;\n  border-radius: 4px;\n  bottom: .5em;\n  left: .5em;\n  padding: 2px;\n  position: absolute; }\n\n.sdk-scale-line-inner {\n  border: 1px solid #ededed;\n  border-top: none;\n  color: #ededed;\n  font-size: 10px;\n  text-align: center;\n  margin: 1px;\n  will-change: contents, width; }\n\n/** SDK button. */\nbutton.sdk-btn {\n  background-color: #f58d50;\n  color: #fff;\n  display: inline-block;\n  font-weight: 400;\n  line-height: 1.25;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  border: 1px solid transparent;\n  padding: .5rem 1rem;\n  font-size: 1rem;\n  border-radius: .25rem; }\n\nli.sdk-layer {\n  list-style: none; }\n\n.sdk-map {\n  position: relative; }\n\n.sdk-map .controls {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%; }\n\n.App {\n  text-align: center; }\n\n.App-logo {\n  -webkit-animation: App-logo-spin infinite 20s linear;\n          animation: App-logo-spin infinite 20s linear;\n  height: 80px; }\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white; }\n\n.App-title {\n  font-size: 1.5em; }\n\n.App-intro {\n  font-size: large; }\n\n@-webkit-keyframes App-logo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes App-logo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n", ""]);
 
 // exports
 
@@ -90991,42 +90991,6 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./src/App.css":
-/*!*********************!*\
-  !*** ./src/App.css ***!
-  \*********************/
-/*! dynamic exports provided */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(/*! !../node_modules/css-loader??ref--1-oneOf-2-1!../node_modules/postcss-loader/lib??postcss!./App.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/App.css");
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(true) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept(/*! !../node_modules/css-loader??ref--1-oneOf-2-1!../node_modules/postcss-loader/lib??postcss!./App.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/App.css", function() {
-			var newContent = __webpack_require__(/*! !../node_modules/css-loader??ref--1-oneOf-2-1!../node_modules/postcss-loader/lib??postcss!./App.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/App.css");
-			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
 /***/ "./src/App.js":
 /*!********************!*\
   !*** ./src/App.js ***!
@@ -91038,23 +91002,25 @@ if(true) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_css__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_redux__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__s_App_css__ = __webpack_require__(/*! ./s/App.css */ "./src/s/App.css");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__s_App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__s_App_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__s_farms_json__ = __webpack_require__(/*! ./s/farms.json */ "./src/s/farms.json");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__s_farms_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__s_farms_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux_thunk__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_redux_thunk__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_components_map__ = __webpack_require__(/*! @boundlessgeo/sdk/components/map */ "./node_modules/@boundlessgeo/sdk/components/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_components_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_components_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_reducers_map__ = __webpack_require__(/*! @boundlessgeo/sdk/reducers/map */ "./node_modules/@boundlessgeo/sdk/reducers/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_reducers_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_reducers_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__ = __webpack_require__(/*! @boundlessgeo/sdk/actions/map */ "./node_modules/@boundlessgeo/sdk/actions/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__bookmarks__ = __webpack_require__(/*! ./bookmarks */ "./src/bookmarks.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__reducer__ = __webpack_require__(/*! ./reducer */ "./src/reducer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__action__ = __webpack_require__(/*! ./action */ "./src/action.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__boundlessgeo_sdk_components_map_popup__ = __webpack_require__(/*! @boundlessgeo/sdk/components/map/popup */ "./node_modules/@boundlessgeo/sdk/components/map/popup.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__boundlessgeo_sdk_components_map_popup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__boundlessgeo_sdk_components_map_popup__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_redux__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_components_map__ = __webpack_require__(/*! @boundlessgeo/sdk/components/map */ "./node_modules/@boundlessgeo/sdk/components/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_components_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_components_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_reducers_map__ = __webpack_require__(/*! @boundlessgeo/sdk/reducers/map */ "./node_modules/@boundlessgeo/sdk/reducers/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_reducers_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_reducers_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__boundlessgeo_sdk_actions_map__ = __webpack_require__(/*! @boundlessgeo/sdk/actions/map */ "./node_modules/@boundlessgeo/sdk/actions/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__boundlessgeo_sdk_actions_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__boundlessgeo_sdk_actions_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__bookmarks__ = __webpack_require__(/*! ./bookmarks */ "./src/bookmarks.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__reducer__ = __webpack_require__(/*! ./reducer */ "./src/reducer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__action__ = __webpack_require__(/*! ./action */ "./src/action.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__boundlessgeo_sdk_components_map_popup__ = __webpack_require__(/*! @boundlessgeo/sdk/components/map/popup */ "./node_modules/@boundlessgeo/sdk/components/map/popup.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__boundlessgeo_sdk_components_map_popup___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__boundlessgeo_sdk_components_map_popup__);
 var _jsxFileName = '/Users/wnordmann/source/codewithacause/harvest-bundle/src/App.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -91067,6 +91033,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// import fetch from 'isomorphic-fetch';
 
 
 
@@ -91083,9 +91050,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var store = Object(__WEBPACK_IMPORTED_MODULE_2_redux__["d" /* createStore */])(Object(__WEBPACK_IMPORTED_MODULE_2_redux__["c" /* combineReducers */])({
-  map: __WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_reducers_map___default.a, bookmark: __WEBPACK_IMPORTED_MODULE_9__reducer__["a" /* default */]
-}), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), Object(__WEBPACK_IMPORTED_MODULE_2_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_4_redux_thunk___default.a));
+
+
+
+
+var store = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["d" /* createStore */])(Object(__WEBPACK_IMPORTED_MODULE_3_redux__["c" /* combineReducers */])({
+  map: __WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_reducers_map___default.a, bookmark: __WEBPACK_IMPORTED_MODULE_10__reducer__["a" /* default */]
+}), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), Object(__WEBPACK_IMPORTED_MODULE_3_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_4_redux_thunk___default.a));
 
 var MarkFeaturesPopup = function (_SdkPopup) {
   _inherits(MarkFeaturesPopup, _SdkPopup);
@@ -91130,7 +91101,7 @@ var MarkFeaturesPopup = function (_SdkPopup) {
         'div',
         { className: 'sdk-popup-content', __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 59
           },
           __self: this
         },
@@ -91139,7 +91110,7 @@ var MarkFeaturesPopup = function (_SdkPopup) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 55
+              lineNumber: 60
             },
             __self: this
           },
@@ -91150,7 +91121,7 @@ var MarkFeaturesPopup = function (_SdkPopup) {
   }]);
 
   return MarkFeaturesPopup;
-}(__WEBPACK_IMPORTED_MODULE_11__boundlessgeo_sdk_components_map_popup___default.a);
+}(__WEBPACK_IMPORTED_MODULE_12__boundlessgeo_sdk_components_map_popup___default.a);
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -91164,28 +91135,53 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      // load in the map style from a external .json
+      //store.dispatch(SdkMapActions.setView([90.37,23.94], 6));
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_8__boundlessgeo_sdk_actions_map__["setView"]([-90.1980205, 38.633941], 18));
       // add the OSM source
-      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["addSource"]('osm', {
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_8__boundlessgeo_sdk_actions_map__["addSource"]('osm', {
         type: 'raster',
         tileSize: 256,
         tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', 'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png', 'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png']
       }));
 
       // add an OSM layer
-      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["addLayer"]({
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_8__boundlessgeo_sdk_actions_map__["addLayer"]({
         id: 'osm',
         source: 'osm'
       }));
-      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["addSource"]('stories', {
+
+      // const addDataFromGeoJSON = (url) => {
+      //
+      //   return fetch(url)
+      //   .then(
+      //     response => response.json(),
+      //     error => console.error('An error occured.', error),
+      //   )
+      //
+      //   .then(json => {
+      //     store.dispatch(SdkMapActions.addSource('stories', {
+      //       type: 'geojson',
+      //       data: json
+      //     }));
+      //     store.dispatch(SdkMapActions.addLayer({
+      //       id: 'stories',
+      //       type: 'circle',
+      //       source: 'stories',
+      //       paint: {
+      //         'circle-radius': 5,
+      //         'circle-color': '#f46b42',
+      //         'circle-stroke-color': '#3a160b',
+      //       }
+      //     }));
+      //   });
+      // }
+      // addDataFromGeoJSON('/s/Farms.geojson');
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_8__boundlessgeo_sdk_actions_map__["addSource"]('stories', {
         type: 'geojson',
-        data: {
-          "type": "FeatureCollection",
-          "name": "Urban Harvest Existing Farms",
-          "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-          "features": [{ "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.540207679982643, 24.681778761020187] } }, { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.247858964457834, 24.647041610326482] } }, { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.420253914284515, 24.663183693273464] } }, { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.350039191291202, 24.85956606418393] } }, { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [90.939401757462207, 24.327018066009312] } }, { "type": "Feature", "properties": { "pkuid": 1, "Title": "Dhunot", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.540207679982643, 24.681778761020187] } }, { "type": "Feature", "properties": { "pkuid": 2, "Title": "Nadigram", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.247858964457834, 24.647041610326482] } }, { "type": "Feature", "properties": { "pkuid": 3, "Title": "Sherpur", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.420253914284515, 24.663183693273464] } }, { "type": "Feature", "properties": { "pkuid": 4, "Title": "Kutibari", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [89.350039191291202, 24.85956606418393] } }, { "type": "Feature", "properties": { "pkuid": 5, "Title": "Nikli", "Story": null, "Summary": null, "Link_video": null, "Link_Image": null, "Date": null }, "geometry": { "type": "Point", "coordinates": [90.939401757462207, 24.327018066009312] } }]
-        }
+        data: __WEBPACK_IMPORTED_MODULE_2__s_farms_json___default.a
       }));
-      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["addLayer"]({
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_8__boundlessgeo_sdk_actions_map__["addLayer"]({
         id: 'stories',
         type: 'circle',
         source: 'stories',
@@ -91195,8 +91191,7 @@ var App = function (_Component) {
           'circle-stroke-color': '#3a160b'
         }
       }));
-      store.dispatch(__WEBPACK_IMPORTED_MODULE_10__action__["a" /* changeSource */]('stories'));
-      store.dispatch(__WEBPACK_IMPORTED_MODULE_7__boundlessgeo_sdk_actions_map__["setView"]([86.3, 24.683], 6));
+      store.dispatch(__WEBPACK_IMPORTED_MODULE_11__action__["a" /* changeSource */]('stories'));
     }
   }, {
     key: 'render',
@@ -91207,15 +91202,15 @@ var App = function (_Component) {
         'div',
         { className: 'App', __source: {
             fileName: _jsxFileName,
-            lineNumber: 117
+            lineNumber: 137
           },
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_3_react_redux__["Provider"],
+          __WEBPACK_IMPORTED_MODULE_5_react_redux__["Provider"],
           { store: store, __source: {
               fileName: _jsxFileName,
-              lineNumber: 118
+              lineNumber: 138
             },
             __self: this
           },
@@ -91223,11 +91218,11 @@ var App = function (_Component) {
             'div',
             { className: 'mapContainer', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 119
+                lineNumber: 139
               },
               __self: this
             },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__boundlessgeo_sdk_components_map___default.a, {
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__boundlessgeo_sdk_components_map___default.a, {
               className: 'map',
               includeFeaturesOnClick: true,
               onClick: function onClick(map, xy, featurePromise) {
@@ -91247,7 +91242,7 @@ var App = function (_Component) {
                     // Show the super advanced fun popup!
                     map.addPopup(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(MarkFeaturesPopup, { coordinate: xy, features: features, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 138
+                        lineNumber: 158
                       },
                       __self: _this3
                     }));
@@ -91256,13 +91251,14 @@ var App = function (_Component) {
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 120
+                lineNumber: 140
               },
               __self: this
             }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__bookmarks__["a" /* default */], { store: store, __source: {
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__bookmarks__["a" /* default */], {
+              __source: {
                 fileName: _jsxFileName,
-                lineNumber: 143
+                lineNumber: 163
               },
               __self: this
             })
@@ -91358,13 +91354,19 @@ var BookmarkComponent = function (_React$PureComponent) {
       // Get the feature selected by the count in state
       // Render the modal window using style from app.css
       var count = this.props.bookmark.count;
+
       if (this.props.map.sources[this.props.bookmark.source] && this.props.map.sources[this.props.bookmark.source].data.features) {
         var feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
+
+        var cleanString = feature.properties.description.split(" ")[1].slice(5);
+        cleanString = cleanString.slice(0, cleanString.length - 1);
+        var image = { backgroundImage: 'url("' + cleanString + '")', color: "#00000" };
+
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'panelContainer', __source: {
               fileName: _jsxFileName,
-              lineNumber: 16
+              lineNumber: 22
             },
             __self: this
           },
@@ -91372,21 +91374,21 @@ var BookmarkComponent = function (_React$PureComponent) {
             'div',
             { className: 'panel', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 17
+                lineNumber: 23
               },
               __self: this
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'imageContainer WILLIETEST', __source: {
+              { className: 'imageContainer', style: image, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 18
+                  lineNumber: 24
                 },
                 __self: this
               },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'closeButton fa fa-close', __source: {
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'closeButton', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 19
+                  lineNumber: 25
                 },
                 __self: this
               }),
@@ -91394,18 +91396,18 @@ var BookmarkComponent = function (_React$PureComponent) {
                 'div',
                 { className: 'title', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 20
+                    lineNumber: 26
                   },
                   __self: this
                 },
-                feature.properties.Title
+                feature.properties.Name
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'storyContainer', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 24
+                  lineNumber: 30
                 },
                 __self: this
               },
@@ -91415,13 +91417,13 @@ var BookmarkComponent = function (_React$PureComponent) {
               'div',
               { className: 'controls', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 27
+                  lineNumber: 33
                 },
                 __self: this
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__moveButton__["a" /* default */], { store: this.props.store, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 28
+                  lineNumber: 34
                 },
                 __self: this
               })
@@ -91434,7 +91436,7 @@ var BookmarkComponent = function (_React$PureComponent) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 42
             },
             __self: this
           },
@@ -91714,6 +91716,54 @@ function bookmarkReducer() {
       return state;
   }
 }
+
+/***/ }),
+
+/***/ "./src/s/App.css":
+/*!***********************!*\
+  !*** ./src/s/App.css ***!
+  \***********************/
+/*! dynamic exports provided */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./App.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/s/App.css");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(true) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./App.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/s/App.css", function() {
+			var newContent = __webpack_require__(/*! !../../node_modules/css-loader??ref--1-oneOf-2-1!../../node_modules/postcss-loader/lib??postcss!./App.css */ "./node_modules/css-loader/index.js?{\"importLoaders\":1}!./node_modules/postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"plugins\":[null,null]}!./src/s/App.css");
+			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/s/farms.json":
+/*!**************************!*\
+  !*** ./src/s/farms.json ***!
+  \**************************/
+/*! dynamic exports provided */
+/*! exports used: default */
+/***/ (function(module, exports) {
+
+module.exports = {"type":"FeatureCollection","name":"Urban Harvest Existing Farms","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"Name":"Food Roof Farm","description":"<img src=\"https://lh3.googleusercontent.com/vTeisCIKR0kPadLu_u2_qn4TrBKjeyMgr-l6ebZO8C1XYPOvAvyJVOjCbL96UyB3yt48SUF215pZdrT7y-s0AK9L_0NjiUjIjrzpMkP6pxXB-IEjFddGLpFBwjTa1WeI0-nJpQ\" height=\"200\" width=\"auto\" /><br><br>","timestamp":null,"begin":null,"end":null,"altitudeMode":null,"tessellate":-1,"extrude":0,"visibility":-1,"drawOrder":null,"icon":null,"gx_media_links":"https://lh3.googleusercontent.com/vTeisCIKR0kPadLu_u2_qn4TrBKjeyMgr-l6ebZO8C1XYPOvAvyJVOjCbL96UyB3yt48SUF215pZdrT7y-s0AK9L_0NjiUjIjrzpMkP6pxXB-IEjFddGLpFBwjTa1WeI0-nJpQ"},"geometry":{"type":"Point","coordinates":[-90.1980205,38.633941,0]}},{"type":"Feature","properties":{"Name":"Fresh Starts Community Garden","description":"<img src=\"https://lh5.googleusercontent.com/qpbUNVMm_K6YIbW9k48oeozkHFr9_LeYSMjhqKb-bpA7Xwdro2ELIgpOgcHuuMs9QnZofPrVsx5j2w8PVVbM9oqSyIGNEwS0yzkx_kQNCXWInMQYb-871cixSKA1L24zAQj_4Q\" height=\"200\" width=\"auto\" /><br><br>","timestamp":null,"begin":null,"end":null,"altitudeMode":null,"tessellate":-1,"extrude":0,"visibility":-1,"drawOrder":null,"icon":null,"gx_media_links":"https://lh5.googleusercontent.com/qpbUNVMm_K6YIbW9k48oeozkHFr9_LeYSMjhqKb-bpA7Xwdro2ELIgpOgcHuuMs9QnZofPrVsx5j2w8PVVbM9oqSyIGNEwS0yzkx_kQNCXWInMQYb-871cixSKA1L24zAQj_4Q"},"geometry":{"type":"Point","coordinates":[-90.2178557,38.6423165,0]}},{"type":"Feature","properties":{"Name":"School Garden: Flance Early Learning Center","description":"<img src=\"https://lh3.googleusercontent.com/Afu8k0rWP8ippmxtSPPm6UQDBGraK1h1SQMse02RXMe0vsLIQq6-vDzM7Tm2-VkZq7QQil4Sd498pTORuu3evmhBOr0ojCqYJtPaZArD4hA0-kS6jQHJejdWKzOWyH6sNv6Npw\" height=\"200\" width=\"auto\" /><br><br>","timestamp":null,"begin":null,"end":null,"altitudeMode":null,"tessellate":-1,"extrude":0,"visibility":-1,"drawOrder":null,"icon":null,"gx_media_links":"https://lh3.googleusercontent.com/Afu8k0rWP8ippmxtSPPm6UQDBGraK1h1SQMse02RXMe0vsLIQq6-vDzM7Tm2-VkZq7QQil4Sd498pTORuu3evmhBOr0ojCqYJtPaZArD4hA0-kS6jQHJejdWKzOWyH6sNv6Npw"},"geometry":{"type":"Point","coordinates":[-90.2043537,38.6403565,0]}},{"type":"Feature","properties":{"Name":"Kerr FOOD ROOF","description":"<img src=\"https://lh4.googleusercontent.com/pvf2ZA-K3y9gbvqrpZHHsaac27_ZaRPCLw_Lok7_t3d50zdSWil3KyH6PRWgageVzhpCKm099cWyjKiYsCgIccchd-0UiVOQ6FdeBkKznEkP4EarKa959C5R4kuK31G5wS7h_w\" height=\"200\" width=\"auto\" /><br><br>","timestamp":null,"begin":null,"end":null,"altitudeMode":null,"tessellate":-1,"extrude":0,"visibility":-1,"drawOrder":null,"icon":null,"gx_media_links":"https://lh4.googleusercontent.com/pvf2ZA-K3y9gbvqrpZHHsaac27_ZaRPCLw_Lok7_t3d50zdSWil3KyH6PRWgageVzhpCKm099cWyjKiYsCgIccchd-0UiVOQ6FdeBkKznEkP4EarKa959C5R4kuK31G5wS7h_w"},"geometry":{"type":"Point","coordinates":[-90.1819729,38.6374365,0]}},{"type":"Feature","properties":{"Name":"Busch Stadium","description":"<img src=\"https://lh3.googleusercontent.com/1RkJqqJQKhVLD07WnKb4_i18nE12EQvgJlgvcvI8uorn6wAvf3lQ5DySssbXSRAghjsMWKy-jy-lm-m1P64BS0YeRFSlECTNcJ1QW7bSwgfzd2Vw6N1ue1DcsRVjZGrnCMOe\" height=\"200\" width=\"auto\" /><br><br>","timestamp":null,"begin":null,"end":null,"altitudeMode":null,"tessellate":-1,"extrude":0,"visibility":-1,"drawOrder":null,"icon":null,"gx_media_links":"https://lh3.googleusercontent.com/1RkJqqJQKhVLD07WnKb4_i18nE12EQvgJlgvcvI8uorn6wAvf3lQ5DySssbXSRAghjsMWKy-jy-lm-m1P64BS0YeRFSlECTNcJ1QW7bSwgfzd2Vw6N1ue1DcsRVjZGrnCMOe"},"geometry":{"type":"Point","coordinates":[-90.1928209,38.6226188,0]}}]}
 
 /***/ }),
 

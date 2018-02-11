@@ -1,13 +1,12 @@
-.ol-attribution {
-  display: none;
-}
 .mapContainer {
   position: relative; }
   .mapContainer .map {
     background-color: #ffffff;
     border-radius: 4px;
-    border: 1px solid #cdcdcd;
-    margin: 3em; }
+    border: 6px solid #cdcdcd;
+    margin: 3em;
+    height: 500px;
+    width: 701px; }
 
 .mapContainer .panelContainer {
   position: absolute;
@@ -17,10 +16,12 @@
   border-radius: 4px;
   border: 1px solid #cdcdcd;
   filter: drop-shadow(0px 10px 5px #757575);
-  height: 586px;
-  width: 32%; }
+  height: 536px;
+  width: 30%;
+  max-width: 515px; }
   .mapContainer .panelContainer .panel .imageContainer {
     color: #ffffff;
+    background-image: url("assets/story-01-bg.png");
     background-color: #cccccc;
     height: 250px;
     position: relative; }
@@ -31,24 +32,39 @@
       padding-right: 14px; }
     .mapContainer .panelContainer .panel .imageContainer .title {
       position: absolute;
-      bottom: 16px;
+      bottom: 5px;
       left: 33px;
       font-size: 24px;
-      font-family: Futura,Trebuchet MS,Arial,sans-serif;
+      font-family: futura-pt,Trebuchet MS,Arial,sans-serif;
       font-style: normal;
       font-variant: normal; }
   .mapContainer .panelContainer .storyContainer {
+    font-family: europa,Trebuchet MS,Arial,sans-serif;
+    color: #333333;
+    font-size: 16px;
     padding: 33px;
-    height: 80%; }
+    height: 224px;
+    overflow: auto;
+    margin-bottom: 40px; }
   .mapContainer .panelContainer .controls {
     position: absolute;
     bottom: 23px;
     text-align: right;
     width: 100%;
     padding-right: 33px; }
+    .mapContainer .panelContainer .controls button {
+      font-size: 16px;
+      border: none;
+      text-transform: uppercase;
+      font-family: europa,Trebuchet MS,Arial,sans-serif; }
+      .mapContainer .panelContainer .controls button i {
+        font-size: 20px; }
 
 * {
   box-sizing: border-box; }
+
+.ol-attribution {
+  display: none; }
 
 /*
  * Include the SDK stylesheet
@@ -297,9 +313,6 @@ li.sdk-layer {
   top: 0;
   width: 100%;
   height: 100%; }
-
-.App {
-  text-align: center; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

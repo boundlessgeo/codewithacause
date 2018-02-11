@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import fetch from 'isomorphic-fetch';
+// import fetch from 'isomorphic-fetch';
 
-import './s/App.css';
-import farms from './s/farms.json';
+import './App.css';
+import farms from './farms.json';
 
 import { createStore, combineReducers, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';

@@ -16,7 +16,7 @@ class BookmarkComponent extends React.PureComponent {
 
       let cleanString = feature.properties.description.split(" ")[1].slice(5);
       cleanString = cleanString.slice(0,cleanString.length-1);
-      const image = {backgroundImage: `url("${cleanString}")`, color:"#00000" };
+      const image = {backgroundImage: `url("${cleanString}")` };
 
       return (
         <div className='panelContainer'>
