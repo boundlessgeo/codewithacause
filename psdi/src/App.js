@@ -14,6 +14,7 @@ import SdkMapReducer from '@boundlessgeo/sdk/reducers/map';
 import * as SdkMapActions from '@boundlessgeo/sdk/actions/map';
 
 import BookmarkComponent from './bookmarks';
+import MoveButtonComponent from './moveButton';
 
 import bookmarkReducer from './reducer';
 import * as bookmarkAction from './action';
@@ -35,7 +36,6 @@ class MarkFeaturesPopup extends SdkPopup {
   markFeatures(evt) {
     const feature_ids = [];
     const features = this.props.features;
-    console.log(features)
 
     for (let i = 0, ii = features.length; i < ii; i++) {
       // create an array of ids to be removed from the map.
@@ -53,6 +53,8 @@ class MarkFeaturesPopup extends SdkPopup {
   }
 
   render() {
+    //console.log(this.props.features[0].properties.pkuid)
+    //console.log(store.getState().bookmark.id)
     const feature_ids = this.props.features.map(f => f.properties.Title);
 
     return this.renderPopup((
@@ -141,8 +143,10 @@ class App extends Component {
                   // no features, :( Let the user know nothing was there.
                   //map.addPopup(<SdkPopup coordinate={xy}><i>This is a popup!</i></SdkPopup>);
                 } else {
+                  var id = features[0].properties.pkuid;
                   // Show the super advanced fun popup!
                   map.addPopup(<MarkFeaturesPopup coordinate={xy} features={features} />);
+                  store.dispatch(bookmarkAction.moveSlide(id));
                 }
                 });
               }}

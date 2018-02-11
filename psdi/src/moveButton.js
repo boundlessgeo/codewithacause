@@ -7,12 +7,12 @@ import * as mapActions from '@boundlessgeo/sdk/actions/map';
 // Custom Bookmark Component
 class MoveButtonComponent extends React.PureComponent {
   // This is the where action really happens, update state and move the map
-  moveBookmark(count) {
-    this.props.moveSlide(count);
+  moveBookmark(id) {
+    this.props.moveSlide(id);
     if (this.props.map.sources[this.props.bookmark.source]) {
-      const feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
+      const feature = this.props.map.sources[this.props.bookmark.source].data.features[id];
 
-      // Simpple hack to adjust center of the map to compensate for the image
+      // Simple hack to adjust center of the map to compensate for the image
       const adjustGeo = [feature.geometry.coordinates[0] - 0.0005, feature.geometry.coordinates[1]];
       this.props.zoomTo(adjustGeo, 18);
     }
@@ -21,20 +21,20 @@ class MoveButtonComponent extends React.PureComponent {
   // Logic for handling next button
   nextBookmark() {
     const featureCount = this.props.map.sources[this.props.bookmark.source].data.features.length;
-    const currentCount = this.props.bookmark.count;
-    const newCount  = currentCount >= featureCount - 1 ? 0 : currentCount + 1;
-    this.moveBookmark(newCount);
+    const currentId = this.props.bookmark.id;
+    const newId  = currentId >= featureCount - 1 ? 0 : currentId + 1;
+    this.moveBookmark(newId);
   }
   // Logic for handling previous button
   previousBookmark() {
     const featureCount = this.props.map.sources[this.props.bookmark.source].data.features.length;
-    const currentCount = this.props.bookmark.count;
-    const newCount = currentCount <= 0 ? featureCount - 1 : currentCount - 1;
-    this.moveBookmark(newCount);
+    const currentId = this.props.bookmark.id;
+    const newId = currentId <= 0 ? featureCount - 1 : currentId - 1;
+    this.moveBookmark(newId);
   }
   componentDidUpdate(nextProps, nextState) {
     if (nextProps.bookmark.source !== this.props.bookmark.source) {
-      this.moveBookmark(this.props.bookmark.count);
+      this.moveBookmark(this.props.bookmark.id);
     }
   }
   // Render the buttons
@@ -61,8 +61,8 @@ function mapStateToProps(state) {
 // Need setView function from map reducer
 function mapDispatchToProps(dispatch) {
   return {
-    moveSlide: (count) => {
-      dispatch(bookmarkAction.moveSlide(count));
+    moveSlide: (id) => {
+      dispatch(bookmarkAction.moveSlide(id));
     },
     zoomTo: (coords, zoomLevel) => {
       dispatch(mapActions.setView(coords, zoomLevel));

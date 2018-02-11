@@ -1,8 +1,8 @@
 // Action for moving
-export function moveSlide(count) {
+export function moveSlide(id) {
   return {
     type: 'MOVE',
-    count
+    id
   };
 }
 export function changeSource(source) {
