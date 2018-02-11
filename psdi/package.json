@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@boundlessgeo/sdk": "^2.3.0",
+    "isomorphic-fetch": "^2.2.1",
     "node-sass-chokidar": "^0.0.3",
     "ol": "^4.6.4",
     "ol-mapbox-style": "^2.10.1",
