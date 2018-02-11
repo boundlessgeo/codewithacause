@@ -1,5 +1,7 @@
 * Follow directions to upload js file
   * https://answers.squarespace.com/questions/6556/where-do-i-upload-javascript-files.html
+  * Need to add the .js to the site wide footer advance->code injector->footer 
+  * ie - `<script type="text/javascript" src="/s/main.js"></script>`
 * Bundle SDK
   * Follow all the steps including eject - https://www.npmjs.com/package/@boundlessgeo/sdk
 * Copy SDK js/css into Project
