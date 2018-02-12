@@ -1,0 +1,137 @@
+{
+  "type": "FeatureCollection",
+  "name": "Urban Harvest Existing Farms",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Food Roof Farm",
+        "description": "<img src=\"https://lh3.googleusercontent.com/vTeisCIKR0kPadLu_u2_qn4TrBKjeyMgr-l6ebZO8C1XYPOvAvyJVOjCbL96UyB3yt48SUF215pZdrT7y-s0AK9L_0NjiUjIjrzpMkP6pxXB-IEjFddGLpFBwjTa1WeI0-nJpQ\" height=\"200\" width=\"auto\" /><br><br>",
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "gx_media_links": "https://lh3.googleusercontent.com/vTeisCIKR0kPadLu_u2_qn4TrBKjeyMgr-l6ebZO8C1XYPOvAvyJVOjCbL96UyB3yt48SUF215pZdrT7y-s0AK9L_0NjiUjIjrzpMkP6pxXB-IEjFddGLpFBwjTa1WeI0-nJpQ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1980205,
+          38.633941,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Fresh Starts Community Garden",
+        "description": "<img src=\"https://lh5.googleusercontent.com/qpbUNVMm_K6YIbW9k48oeozkHFr9_LeYSMjhqKb-bpA7Xwdro2ELIgpOgcHuuMs9QnZofPrVsx5j2w8PVVbM9oqSyIGNEwS0yzkx_kQNCXWInMQYb-871cixSKA1L24zAQj_4Q\" height=\"200\" width=\"auto\" /><br><br>",
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "gx_media_links": "https://lh5.googleusercontent.com/qpbUNVMm_K6YIbW9k48oeozkHFr9_LeYSMjhqKb-bpA7Xwdro2ELIgpOgcHuuMs9QnZofPrVsx5j2w8PVVbM9oqSyIGNEwS0yzkx_kQNCXWInMQYb-871cixSKA1L24zAQj_4Q"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2178557,
+          38.6423165,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "School Garden: Flance Early Learning Center",
+        "description": "<img src=\"https://lh3.googleusercontent.com/Afu8k0rWP8ippmxtSPPm6UQDBGraK1h1SQMse02RXMe0vsLIQq6-vDzM7Tm2-VkZq7QQil4Sd498pTORuu3evmhBOr0ojCqYJtPaZArD4hA0-kS6jQHJejdWKzOWyH6sNv6Npw\" height=\"200\" width=\"auto\" /><br><br>",
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "gx_media_links": "https://lh3.googleusercontent.com/Afu8k0rWP8ippmxtSPPm6UQDBGraK1h1SQMse02RXMe0vsLIQq6-vDzM7Tm2-VkZq7QQil4Sd498pTORuu3evmhBOr0ojCqYJtPaZArD4hA0-kS6jQHJejdWKzOWyH6sNv6Npw"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2043537,
+          38.6403565,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kerr FOOD ROOF",
+        "description": "<img src=\"https://lh4.googleusercontent.com/pvf2ZA-K3y9gbvqrpZHHsaac27_ZaRPCLw_Lok7_t3d50zdSWil3KyH6PRWgageVzhpCKm099cWyjKiYsCgIccchd-0UiVOQ6FdeBkKznEkP4EarKa959C5R4kuK31G5wS7h_w\" height=\"200\" width=\"auto\" /><br><br>",
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "gx_media_links": "https://lh4.googleusercontent.com/pvf2ZA-K3y9gbvqrpZHHsaac27_ZaRPCLw_Lok7_t3d50zdSWil3KyH6PRWgageVzhpCKm099cWyjKiYsCgIccchd-0UiVOQ6FdeBkKznEkP4EarKa959C5R4kuK31G5wS7h_w"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1819729,
+          38.6374365,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Busch Stadium",
+        "description": "<img src=\"https://lh3.googleusercontent.com/1RkJqqJQKhVLD07WnKb4_i18nE12EQvgJlgvcvI8uorn6wAvf3lQ5DySssbXSRAghjsMWKy-jy-lm-m1P64BS0YeRFSlECTNcJ1QW7bSwgfzd2Vw6N1ue1DcsRVjZGrnCMOe\" height=\"200\" width=\"auto\" /><br><br>",
+        "timestamp": null,
+        "begin": null,
+        "end": null,
+        "altitudeMode": null,
+        "tessellate": -1,
+        "extrude": 0,
+        "visibility": -1,
+        "drawOrder": null,
+        "icon": null,
+        "gx_media_links": "https://lh3.googleusercontent.com/1RkJqqJQKhVLD07WnKb4_i18nE12EQvgJlgvcvI8uorn6wAvf3lQ5DySssbXSRAghjsMWKy-jy-lm-m1P64BS0YeRFSlECTNcJ1QW7bSwgfzd2Vw6N1ue1DcsRVjZGrnCMOe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1928209,
+          38.6226188,
+          0
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+
+.mapContainer {
+  position: relative;
+  .map {
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 6px solid #cdcdcd;
+    margin: 3em;
+    height: 500px;
+    width: 701px;
+  }
+}
+.mapContainer .panelContainer {
+  position: absolute;
+  background-color: #ffffff;
+  top: 30px;
+  left: 85px;
+  border-radius: 4px;
+  border: 1px solid #cdcdcd;
+  filter: drop-shadow(0px 10px 5px #757575);
+  height: 400px;
+  width: 30%;
+  max-width: 515px;
+  .panel .imageContainer {
+    color: #ffffff;
+    background-image: url("assets/story-01-bg.png");
+    background-color: #cccccc;
+    height: 250px;
+    position: relative;
+    .closeButton {
+      text-align: right;
+      width: 100%;
+      padding-top: 10px;
+      padding-right: 14px;
+    }
+    .title {
+      position: absolute;
+      bottom: 5px;
+      left: 33px;
+      font-size: 24px;
+      font-family: futura-pt,Trebuchet MS,Arial,sans-serif;
+      font-style: normal;
+    	font-variant: normal;
+    }
+  }
+  .storyContainer {
+    font-family: europa,Trebuchet MS,Arial,sans-serif;
+    color: #333333;
+    font-size: 16px;
+    padding: 33px;
+    height: 224px;
+    overflow: auto;
+    margin-bottom: 40px;
+  }
+  .controls {
+    position: absolute;
+    bottom: 23px;
+    text-align: right;
+    width: 100%;
+    padding-right: 33px;
+    button {
+      font-size: 16px;
+      border: none;
+      text-transform: uppercase;
+      font-family: europa,Trebuchet MS,Arial,sans-serif;
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+}
