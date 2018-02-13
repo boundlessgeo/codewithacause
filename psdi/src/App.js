@@ -103,6 +103,7 @@ class App extends Component {
                   var id = features[0].properties.pkuid;
                   // Show the super advanced fun popup!
                   map.addPopup(<MarkFeaturesPopup coordinate={xy} features={features} />);
+                  //map.addPopup(<SdkPopup coordinate={xy} >{features[0]}</SdkPopup>);
                   store.dispatch(bookmarkAction.moveSlide(id));
                 }
                 });
