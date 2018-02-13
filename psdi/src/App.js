@@ -110,6 +110,9 @@ class App extends Component {
               }}
             />
             <BookmarkComponent/>
+            <div className="donate">
+              <button className="donateButton">Get Involved</button>
+            </div>
           </div>
         </Provider>
       </div>

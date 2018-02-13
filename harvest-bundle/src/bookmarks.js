@@ -8,19 +8,23 @@ class BookmarkComponent extends React.PureComponent {
   render() {
     // Get the feature selected by the count in state
     // Render the modal window using style from app.css
-    const id = this.props.bookmark.id;
+    const count = this.props.bookmark.count;
 
     if (this.props.map.sources[this.props.bookmark.source] &&
       this.props.map.sources[this.props.bookmark.source].data.features) {
-      const feature = this.props.map.sources[this.props.bookmark.source].data.features[id];
-      const image = {backgroundImage: `url("${feature.properties.Link_Image}")`, color:"#00000" };
+      const feature = this.props.map.sources[this.props.bookmark.source].data.features[count];
+
+      let cleanString = feature.properties.description.split(" ")[1].slice(5);
+      cleanString = cleanString.slice(0,cleanString.length-1);
+      const image = {backgroundImage: `url("${cleanString}")` };
+
       return (
         <div className='panelContainer'>
           <div className="panel">
             <div className="imageContainer" style={image}>
               <div className="closeButton"></div>
               <div className="title">
-                {feature.properties.Title}
+                {feature.properties.Name}
               </div>
             </div>
             <div className="storyContainer">
