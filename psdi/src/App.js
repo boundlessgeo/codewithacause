@@ -19,14 +19,43 @@ import MarkFeaturesPopup from './popup';
 import bookmarkReducer from './reducer';
 import * as bookmarkAction from './action';
 
+import { initClient, handleClientLoad, getGeo } from './gsheets';
+
 const store = createStore(combineReducers({
   map: SdkMapReducer, bookmark: bookmarkReducer,
 }), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 applyMiddleware(thunkMiddleware));
 
+//const API_KEY = 'AIzaSyBhpTPe8JSiumJI_4_myyyOzabqhMIc8aU';
+
 class App extends Component {
+  // loadSheetsData() {
+  //   const script = document.createElement('script');
+  //   script,src = 'https://apis.google.com/js/client.js';
+  //
+  //   script.onload = () => {
+  //     gapi.load('client', () => {
+  //       gapi.client.setApiKey(API_KEY);
+  //       gapi.client.load('spreadsheets', 'v4', () => {
+  //         this.setState({ gapiReady: true});
+  //       })
+  //     })
+  //     //this.loadClientWhenGapiReady(script);
+  //   };
+  //
+  //   document.body.appendChild(script);
+  // }
 
   componentDidMount() {
+    //console.log(window.gapi)
+    window.gapi.load('client', () => {
+      initClient();
+      //checkAuth(true, this.handleAuth.bind(this));
+    });
+    //initClient();
+    // handleClientLoad();
+    //console.log(window.gapi)
+    //getGeo();
     // load in the map style from a external .json
     //store.dispatch(SdkMapActions.setView([90.37,23.94], 6));
     store.dispatch(SdkMapActions.setView([86.3, 24.683], 6));
@@ -46,6 +75,14 @@ class App extends Component {
       id: 'osm',
       source: 'osm',
     }));
+
+    // const addDataFromGoogleSheet = (url) => {
+    //   try {
+    //     fetch(url, {
+    //
+    //     })
+    //   }
+    // }
 
     const addDataFromGeoJSON = (url) => {
 
